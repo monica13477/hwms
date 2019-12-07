@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.bus.REL_DTLMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.bus.REL_DTL" >
+    <id column="WORK_CENTER" property="workCenter" jdbcType="NVARCHAR" />
+    <id column="STORER_ID" property="storerId" jdbcType="NVARCHAR" />
+    <id column="REL_ID" property="relId" jdbcType="NVARCHAR" />
+    <id column="BATCH_NO" property="batchNo" jdbcType="INTEGER" />
+    <id column="REL_LINE_SEQ" property="relLineSeq" jdbcType="BIGINT" />
+    <result column="STATUS" property="status" jdbcType="NVARCHAR" />
+    <result column="SKU" property="sku" jdbcType="NVARCHAR" />
+    <result column="SKU_DESC" property="skuDesc" jdbcType="NVARCHAR" />
+    <result column="SKU_STATUS" property="skuStatus" jdbcType="NVARCHAR" />
+    <result column="PACKAGE_CODE" property="packageCode" jdbcType="NVARCHAR" />
+    <result column="PACKAGE_QTY" property="packageQty" jdbcType="NUMERIC" />
+    <result column="UNIT_PRICE" property="unitPrice" jdbcType="NUMERIC" />
+    <result column="EXPIRY_DATE" property="expiryDate" jdbcType="TIMESTAMP" />
+    <result column="MANUF_DATE" property="manufDate" jdbcType="TIMESTAMP" />
+    <result column="ALLOCATE_RULE_01" property="allocateRule01" jdbcType="NVARCHAR" />
+    <result column="ALLOCATE_RULE_02" property="allocateRule02" jdbcType="NVARCHAR" />
+    <result column="RELEASE_QTY" property="releaseQty" jdbcType="NUMERIC" />
+    <result column="REL_BASE_QTY" property="relBaseQty" jdbcType="NUMERIC" />
+    <result column="ALLOCATED_QTY" property="allocatedQty" jdbcType="NUMERIC" />
+    <result column="PICKED_QTY" property="pickedQty" jdbcType="NUMERIC" />
+    <result column="SHIPPED_QTY" property="shippedQty" jdbcType="NUMERIC" />
+    <result column="LOT_ID" property="lotId" jdbcType="NVARCHAR" />
+    <result column="ORIGINAL_LOT_ID" property="originalLotId" jdbcType="NVARCHAR" />
+    <result column="LOCATION" property="location" jdbcType="NVARCHAR" />
+    <result column="CARTON_NO" property="cartonNo" jdbcType="NVARCHAR" />
+    <result column="PALLET_NO" property="palletNo" jdbcType="NVARCHAR" />
+    <result column="REC_LINE_SEQ" property="recLineSeq" jdbcType="BIGINT" />
+    <result column="DUDF_01" property="dudf01" jdbcType="NVARCHAR" />
+    <result column="DUDF_02" property="dudf02" jdbcType="NVARCHAR" />
+    <result column="DUDF_03" property="dudf03" jdbcType="NVARCHAR" />
+    <result column="DUDF_04" property="dudf04" jdbcType="NVARCHAR" />
+    <result column="DUDF_05" property="dudf05" jdbcType="NVARCHAR" />
+    <result column="DUDF_06" property="dudf06" jdbcType="NVARCHAR" />
+    <result column="DUDF_07" property="dudf07" jdbcType="NVARCHAR" />
+    <result column="DUDF_08" property="dudf08" jdbcType="NVARCHAR" />
+    <result column="DUDF_09" property="dudf09" jdbcType="NVARCHAR" />
+    <result column="DUDF_10" property="dudf10" jdbcType="NVARCHAR" />
+    <result column="DUDF_11" property="dudf11" jdbcType="NVARCHAR" />
+    <result column="DUDF_12" property="dudf12" jdbcType="NVARCHAR" />
+    <result column="DUDF_13" property="dudf13" jdbcType="NVARCHAR" />
+    <result column="DUDF_14" property="dudf14" jdbcType="NVARCHAR" />
+    <result column="DUDF_15" property="dudf15" jdbcType="NVARCHAR" />
+    <result column="DUDF_16" property="dudf16" jdbcType="NVARCHAR" />
+    <result column="DUDF_17" property="dudf17" jdbcType="NVARCHAR" />
+    <result column="DUDF_18" property="dudf18" jdbcType="NVARCHAR" />
+    <result column="DUDF_19" property="dudf19" jdbcType="NVARCHAR" />
+    <result column="DUDF_20" property="dudf20" jdbcType="NVARCHAR" />
+    <result column="DUDF_21" property="dudf21" jdbcType="NVARCHAR" />
+    <result column="DUDF_22" property="dudf22" jdbcType="NVARCHAR" />
+    <result column="DUDF_23" property="dudf23" jdbcType="NVARCHAR" />
+    <result column="DUDF_24" property="dudf24" jdbcType="NVARCHAR" />
+    <result column="DUDF_25" property="dudf25" jdbcType="NVARCHAR" />
+    <result column="DUDF_26" property="dudf26" jdbcType="NVARCHAR" />
+    <result column="DUDF_27" property="dudf27" jdbcType="NVARCHAR" />
+    <result column="DUDF_28" property="dudf28" jdbcType="NVARCHAR" />
+    <result column="DUDF_29" property="dudf29" jdbcType="NVARCHAR" />
+    <result column="DUDF_30" property="dudf30" jdbcType="NVARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="NVARCHAR" />
+    <result column="VERSION" property="version" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="NVARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_BY" property="modifyBy" jdbcType="NVARCHAR" />
+    <result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="PRODUCT_LOT" property="productLot" jdbcType="NVARCHAR" />
+    <result column="PRODUCT_BATCH" property="productBatch" jdbcType="NVARCHAR" />
+    <result column="DISCREPANCY_QTY" property="discrepancyQty" jdbcType="NUMERIC" />
+    <result column="PRE_ALLOCATED_QTY" property="preAllocatedQty" jdbcType="NUMERIC" />
+    <result column="SKU_UPC" property="skuUpc" jdbcType="NVARCHAR" />
+    <result column="PREALLOCATE_STATUS" property="preallocateStatus" jdbcType="NVARCHAR" />
+    <result column="PSO_LINE_SEQ" property="psoLineSeq" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    WORK_CENTER, STORER_ID, REL_ID, BATCH_NO, REL_LINE_SEQ, STATUS, SKU, SKU_DESC, SKU_STATUS, 
+    PACKAGE_CODE, PACKAGE_QTY, UNIT_PRICE, EXPIRY_DATE, MANUF_DATE, ALLOCATE_RULE_01, 
+    ALLOCATE_RULE_02, RELEASE_QTY, REL_BASE_QTY, ALLOCATED_QTY, PICKED_QTY, SHIPPED_QTY, 
+    LOT_ID, ORIGINAL_LOT_ID, LOCATION, CARTON_NO, PALLET_NO, REC_LINE_SEQ, DUDF_01, DUDF_02, 
+    DUDF_03, DUDF_04, DUDF_05, DUDF_06, DUDF_07, DUDF_08, DUDF_09, DUDF_10, DUDF_11, 
+    DUDF_12, DUDF_13, DUDF_14, DUDF_15, DUDF_16, DUDF_17, DUDF_18, DUDF_19, DUDF_20, 
+    DUDF_21, DUDF_22, DUDF_23, DUDF_24, DUDF_25, DUDF_26, DUDF_27, DUDF_28, DUDF_29, 
+    DUDF_30, REMARKS, VERSION, CREATE_BY, CREATE_DATE, MODIFY_BY, MODIFY_DATE, PRODUCT_LOT, 
+    PRODUCT_BATCH, DISCREPANCY_QTY, PRE_ALLOCATED_QTY, SKU_UPC, PREALLOCATE_STATUS, PSO_LINE_SEQ
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.customs.hwms.entity.bus.REL_DTLKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from REL_DTL
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+      and REL_LINE_SEQ = #{relLineSeq,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.customs.hwms.entity.bus.REL_DTLKey" >
+    delete from REL_DTL
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+      and REL_LINE_SEQ = #{relLineSeq,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.bus.REL_DTL" >
+    insert into REL_DTL (WORK_CENTER, STORER_ID, REL_ID, 
+      BATCH_NO, REL_LINE_SEQ, STATUS, 
+      SKU, SKU_DESC, SKU_STATUS, 
+      PACKAGE_CODE, PACKAGE_QTY, UNIT_PRICE, 
+      EXPIRY_DATE, MANUF_DATE, ALLOCATE_RULE_01, 
+      ALLOCATE_RULE_02, RELEASE_QTY, REL_BASE_QTY, 
+      ALLOCATED_QTY, PICKED_QTY, SHIPPED_QTY, 
+      LOT_ID, ORIGINAL_LOT_ID, LOCATION, 
+      CARTON_NO, PALLET_NO, REC_LINE_SEQ, 
+      DUDF_01, DUDF_02, DUDF_03, 
+      DUDF_04, DUDF_05, DUDF_06, 
+      DUDF_07, DUDF_08, DUDF_09, 
+      DUDF_10, DUDF_11, DUDF_12, 
+      DUDF_13, DUDF_14, DUDF_15, 
+      DUDF_16, DUDF_17, DUDF_18, 
+      DUDF_19, DUDF_20, DUDF_21, 
+      DUDF_22, DUDF_23, DUDF_24, 
+      DUDF_25, DUDF_26, DUDF_27, 
+      DUDF_28, DUDF_29, DUDF_30, 
+      REMARKS, VERSION, CREATE_BY, 
+      CREATE_DATE, MODIFY_BY, MODIFY_DATE, 
+      PRODUCT_LOT, PRODUCT_BATCH, DISCREPANCY_QTY, 
+      PRE_ALLOCATED_QTY, SKU_UPC, PREALLOCATE_STATUS, 
+      PSO_LINE_SEQ)
+    values (#{workCenter,jdbcType=NVARCHAR}, #{storerId,jdbcType=NVARCHAR}, #{relId,jdbcType=NVARCHAR}, 
+      #{batchNo,jdbcType=INTEGER}, #{relLineSeq,jdbcType=BIGINT}, #{status,jdbcType=NVARCHAR}, 
+      #{sku,jdbcType=NVARCHAR}, #{skuDesc,jdbcType=NVARCHAR}, #{skuStatus,jdbcType=NVARCHAR}, 
+      #{packageCode,jdbcType=NVARCHAR}, #{packageQty,jdbcType=NUMERIC}, #{unitPrice,jdbcType=NUMERIC}, 
+      #{expiryDate,jdbcType=TIMESTAMP}, #{manufDate,jdbcType=TIMESTAMP}, #{allocateRule01,jdbcType=NVARCHAR}, 
+      #{allocateRule02,jdbcType=NVARCHAR}, #{releaseQty,jdbcType=NUMERIC}, #{relBaseQty,jdbcType=NUMERIC}, 
+      #{allocatedQty,jdbcType=NUMERIC}, #{pickedQty,jdbcType=NUMERIC}, #{shippedQty,jdbcType=NUMERIC}, 
+      #{lotId,jdbcType=NVARCHAR}, #{originalLotId,jdbcType=NVARCHAR}, #{location,jdbcType=NVARCHAR}, 
+      #{cartonNo,jdbcType=NVARCHAR}, #{palletNo,jdbcType=NVARCHAR}, #{recLineSeq,jdbcType=BIGINT}, 
+      #{dudf01,jdbcType=NVARCHAR}, #{dudf02,jdbcType=NVARCHAR}, #{dudf03,jdbcType=NVARCHAR}, 
+      #{dudf04,jdbcType=NVARCHAR}, #{dudf05,jdbcType=NVARCHAR}, #{dudf06,jdbcType=NVARCHAR}, 
+      #{dudf07,jdbcType=NVARCHAR}, #{dudf08,jdbcType=NVARCHAR}, #{dudf09,jdbcType=NVARCHAR}, 
+      #{dudf10,jdbcType=NVARCHAR}, #{dudf11,jdbcType=NVARCHAR}, #{dudf12,jdbcType=NVARCHAR}, 
+      #{dudf13,jdbcType=NVARCHAR}, #{dudf14,jdbcType=NVARCHAR}, #{dudf15,jdbcType=NVARCHAR}, 
+      #{dudf16,jdbcType=NVARCHAR}, #{dudf17,jdbcType=NVARCHAR}, #{dudf18,jdbcType=NVARCHAR}, 
+      #{dudf19,jdbcType=NVARCHAR}, #{dudf20,jdbcType=NVARCHAR}, #{dudf21,jdbcType=NVARCHAR}, 
+      #{dudf22,jdbcType=NVARCHAR}, #{dudf23,jdbcType=NVARCHAR}, #{dudf24,jdbcType=NVARCHAR}, 
+      #{dudf25,jdbcType=NVARCHAR}, #{dudf26,jdbcType=NVARCHAR}, #{dudf27,jdbcType=NVARCHAR}, 
+      #{dudf28,jdbcType=NVARCHAR}, #{dudf29,jdbcType=NVARCHAR}, #{dudf30,jdbcType=NVARCHAR}, 
+      #{remarks,jdbcType=NVARCHAR}, #{version,jdbcType=INTEGER}, #{createBy,jdbcType=NVARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=NVARCHAR}, #{modifyDate,jdbcType=TIMESTAMP}, 
+      #{productLot,jdbcType=NVARCHAR}, #{productBatch,jdbcType=NVARCHAR}, #{discrepancyQty,jdbcType=NUMERIC}, 
+      #{preAllocatedQty,jdbcType=NUMERIC}, #{skuUpc,jdbcType=NVARCHAR}, #{preallocateStatus,jdbcType=NVARCHAR}, 
+      #{psoLineSeq,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.bus.REL_DTL" >
+    insert into REL_DTL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        WORK_CENTER,
+      </if>
+      <if test="storerId != null" >
+        STORER_ID,
+      </if>
+      <if test="relId != null" >
+        REL_ID,
+      </if>
+      <if test="batchNo != null" >
+        BATCH_NO,
+      </if>
+      <if test="relLineSeq != null" >
+        REL_LINE_SEQ,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="sku != null" >
+        SKU,
+      </if>
+      <if test="skuDesc != null" >
+        SKU_DESC,
+      </if>
+      <if test="skuStatus != null" >
+        SKU_STATUS,
+      </if>
+      <if test="packageCode != null" >
+        PACKAGE_CODE,
+      </if>
+      <if test="packageQty != null" >
+        PACKAGE_QTY,
+      </if>
+      <if test="unitPrice != null" >
+        UNIT_PRICE,
+      </if>
+      <if test="expiryDate != null" >
+        EXPIRY_DATE,
+      </if>
+      <if test="manufDate != null" >
+        MANUF_DATE,
+      </if>
+      <if test="allocateRule01 != null" >
+        ALLOCATE_RULE_01,
+      </if>
+      <if test="allocateRule02 != null" >
+        ALLOCATE_RULE_02,
+      </if>
+      <if test="releaseQty != null" >
+        RELEASE_QTY,
+      </if>
+      <if test="relBaseQty != null" >
+        REL_BASE_QTY,
+      </if>
+      <if test="allocatedQty != null" >
+        ALLOCATED_QTY,
+      </if>
+      <if test="pickedQty != null" >
+        PICKED_QTY,
+      </if>
+      <if test="shippedQty != null" >
+        SHIPPED_QTY,
+      </if>
+      <if test="lotId != null" >
+        LOT_ID,
+      </if>
+      <if test="originalLotId != null" >
+        ORIGINAL_LOT_ID,
+      </if>
+      <if test="location != null" >
+        LOCATION,
+      </if>
+      <if test="cartonNo != null" >
+        CARTON_NO,
+      </if>
+      <if test="palletNo != null" >
+        PALLET_NO,
+      </if>
+      <if test="recLineSeq != null" >
+        REC_LINE_SEQ,
+      </if>
+      <if test="dudf01 != null" >
+        DUDF_01,
+      </if>
+      <if test="dudf02 != null" >
+        DUDF_02,
+      </if>
+      <if test="dudf03 != null" >
+        DUDF_03,
+      </if>
+      <if test="dudf04 != null" >
+        DUDF_04,
+      </if>
+      <if test="dudf05 != null" >
+        DUDF_05,
+      </if>
+      <if test="dudf06 != null" >
+        DUDF_06,
+      </if>
+      <if test="dudf07 != null" >
+        DUDF_07,
+      </if>
+      <if test="dudf08 != null" >
+        DUDF_08,
+      </if>
+      <if test="dudf09 != null" >
+        DUDF_09,
+      </if>
+      <if test="dudf10 != null" >
+        DUDF_10,
+      </if>
+      <if test="dudf11 != null" >
+        DUDF_11,
+      </if>
+      <if test="dudf12 != null" >
+        DUDF_12,
+      </if>
+      <if test="dudf13 != null" >
+        DUDF_13,
+      </if>
+      <if test="dudf14 != null" >
+        DUDF_14,
+      </if>
+      <if test="dudf15 != null" >
+        DUDF_15,
+      </if>
+      <if test="dudf16 != null" >
+        DUDF_16,
+      </if>
+      <if test="dudf17 != null" >
+        DUDF_17,
+      </if>
+      <if test="dudf18 != null" >
+        DUDF_18,
+      </if>
+      <if test="dudf19 != null" >
+        DUDF_19,
+      </if>
+      <if test="dudf20 != null" >
+        DUDF_20,
+      </if>
+      <if test="dudf21 != null" >
+        DUDF_21,
+      </if>
+      <if test="dudf22 != null" >
+        DUDF_22,
+      </if>
+      <if test="dudf23 != null" >
+        DUDF_23,
+      </if>
+      <if test="dudf24 != null" >
+        DUDF_24,
+      </if>
+      <if test="dudf25 != null" >
+        DUDF_25,
+      </if>
+      <if test="dudf26 != null" >
+        DUDF_26,
+      </if>
+      <if test="dudf27 != null" >
+        DUDF_27,
+      </if>
+      <if test="dudf28 != null" >
+        DUDF_28,
+      </if>
+      <if test="dudf29 != null" >
+        DUDF_29,
+      </if>
+      <if test="dudf30 != null" >
+        DUDF_30,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY,
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE,
+      </if>
+      <if test="productLot != null" >
+        PRODUCT_LOT,
+      </if>
+      <if test="productBatch != null" >
+        PRODUCT_BATCH,
+      </if>
+      <if test="discrepancyQty != null" >
+        DISCREPANCY_QTY,
+      </if>
+      <if test="preAllocatedQty != null" >
+        PRE_ALLOCATED_QTY,
+      </if>
+      <if test="skuUpc != null" >
+        SKU_UPC,
+      </if>
+      <if test="preallocateStatus != null" >
+        PREALLOCATE_STATUS,
+      </if>
+      <if test="psoLineSeq != null" >
+        PSO_LINE_SEQ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        #{workCenter,jdbcType=NVARCHAR},
+      </if>
+      <if test="storerId != null" >
+        #{storerId,jdbcType=NVARCHAR},
+      </if>
+      <if test="relId != null" >
+        #{relId,jdbcType=NVARCHAR},
+      </if>
+      <if test="batchNo != null" >
+        #{batchNo,jdbcType=INTEGER},
+      </if>
+      <if test="relLineSeq != null" >
+        #{relLineSeq,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="sku != null" >
+        #{sku,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuDesc != null" >
+        #{skuDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuStatus != null" >
+        #{skuStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="packageCode != null" >
+        #{packageCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="packageQty != null" >
+        #{packageQty,jdbcType=NUMERIC},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="expiryDate != null" >
+        #{expiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="manufDate != null" >
+        #{manufDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allocateRule01 != null" >
+        #{allocateRule01,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule02 != null" >
+        #{allocateRule02,jdbcType=NVARCHAR},
+      </if>
+      <if test="releaseQty != null" >
+        #{releaseQty,jdbcType=NUMERIC},
+      </if>
+      <if test="relBaseQty != null" >
+        #{relBaseQty,jdbcType=NUMERIC},
+      </if>
+      <if test="allocatedQty != null" >
+        #{allocatedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="pickedQty != null" >
+        #{pickedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="shippedQty != null" >
+        #{shippedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="lotId != null" >
+        #{lotId,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalLotId != null" >
+        #{originalLotId,jdbcType=NVARCHAR},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=NVARCHAR},
+      </if>
+      <if test="cartonNo != null" >
+        #{cartonNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="palletNo != null" >
+        #{palletNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="recLineSeq != null" >
+        #{recLineSeq,jdbcType=BIGINT},
+      </if>
+      <if test="dudf01 != null" >
+        #{dudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf02 != null" >
+        #{dudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf03 != null" >
+        #{dudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf04 != null" >
+        #{dudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf05 != null" >
+        #{dudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf06 != null" >
+        #{dudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf07 != null" >
+        #{dudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf08 != null" >
+        #{dudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf09 != null" >
+        #{dudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf10 != null" >
+        #{dudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf11 != null" >
+        #{dudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf12 != null" >
+        #{dudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf13 != null" >
+        #{dudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf14 != null" >
+        #{dudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf15 != null" >
+        #{dudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf16 != null" >
+        #{dudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf17 != null" >
+        #{dudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf18 != null" >
+        #{dudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf19 != null" >
+        #{dudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf20 != null" >
+        #{dudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf21 != null" >
+        #{dudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf22 != null" >
+        #{dudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf23 != null" >
+        #{dudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf24 != null" >
+        #{dudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf25 != null" >
+        #{dudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf26 != null" >
+        #{dudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf27 != null" >
+        #{dudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf28 != null" >
+        #{dudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf29 != null" >
+        #{dudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf30 != null" >
+        #{dudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productLot != null" >
+        #{productLot,jdbcType=NVARCHAR},
+      </if>
+      <if test="productBatch != null" >
+        #{productBatch,jdbcType=NVARCHAR},
+      </if>
+      <if test="discrepancyQty != null" >
+        #{discrepancyQty,jdbcType=NUMERIC},
+      </if>
+      <if test="preAllocatedQty != null" >
+        #{preAllocatedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="skuUpc != null" >
+        #{skuUpc,jdbcType=NVARCHAR},
+      </if>
+      <if test="preallocateStatus != null" >
+        #{preallocateStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="psoLineSeq != null" >
+        #{psoLineSeq,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.bus.REL_DTL" >
+    update REL_DTL
+    <set >
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="sku != null" >
+        SKU = #{sku,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuDesc != null" >
+        SKU_DESC = #{skuDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuStatus != null" >
+        SKU_STATUS = #{skuStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="packageCode != null" >
+        PACKAGE_CODE = #{packageCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="packageQty != null" >
+        PACKAGE_QTY = #{packageQty,jdbcType=NUMERIC},
+      </if>
+      <if test="unitPrice != null" >
+        UNIT_PRICE = #{unitPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="expiryDate != null" >
+        EXPIRY_DATE = #{expiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="manufDate != null" >
+        MANUF_DATE = #{manufDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allocateRule01 != null" >
+        ALLOCATE_RULE_01 = #{allocateRule01,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule02 != null" >
+        ALLOCATE_RULE_02 = #{allocateRule02,jdbcType=NVARCHAR},
+      </if>
+      <if test="releaseQty != null" >
+        RELEASE_QTY = #{releaseQty,jdbcType=NUMERIC},
+      </if>
+      <if test="relBaseQty != null" >
+        REL_BASE_QTY = #{relBaseQty,jdbcType=NUMERIC},
+      </if>
+      <if test="allocatedQty != null" >
+        ALLOCATED_QTY = #{allocatedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="pickedQty != null" >
+        PICKED_QTY = #{pickedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="shippedQty != null" >
+        SHIPPED_QTY = #{shippedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="lotId != null" >
+        LOT_ID = #{lotId,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalLotId != null" >
+        ORIGINAL_LOT_ID = #{originalLotId,jdbcType=NVARCHAR},
+      </if>
+      <if test="location != null" >
+        LOCATION = #{location,jdbcType=NVARCHAR},
+      </if>
+      <if test="cartonNo != null" >
+        CARTON_NO = #{cartonNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="palletNo != null" >
+        PALLET_NO = #{palletNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="recLineSeq != null" >
+        REC_LINE_SEQ = #{recLineSeq,jdbcType=BIGINT},
+      </if>
+      <if test="dudf01 != null" >
+        DUDF_01 = #{dudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf02 != null" >
+        DUDF_02 = #{dudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf03 != null" >
+        DUDF_03 = #{dudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf04 != null" >
+        DUDF_04 = #{dudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf05 != null" >
+        DUDF_05 = #{dudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf06 != null" >
+        DUDF_06 = #{dudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf07 != null" >
+        DUDF_07 = #{dudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf08 != null" >
+        DUDF_08 = #{dudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf09 != null" >
+        DUDF_09 = #{dudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf10 != null" >
+        DUDF_10 = #{dudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf11 != null" >
+        DUDF_11 = #{dudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf12 != null" >
+        DUDF_12 = #{dudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf13 != null" >
+        DUDF_13 = #{dudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf14 != null" >
+        DUDF_14 = #{dudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf15 != null" >
+        DUDF_15 = #{dudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf16 != null" >
+        DUDF_16 = #{dudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf17 != null" >
+        DUDF_17 = #{dudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf18 != null" >
+        DUDF_18 = #{dudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf19 != null" >
+        DUDF_19 = #{dudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf20 != null" >
+        DUDF_20 = #{dudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf21 != null" >
+        DUDF_21 = #{dudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf22 != null" >
+        DUDF_22 = #{dudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf23 != null" >
+        DUDF_23 = #{dudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf24 != null" >
+        DUDF_24 = #{dudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf25 != null" >
+        DUDF_25 = #{dudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf26 != null" >
+        DUDF_26 = #{dudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf27 != null" >
+        DUDF_27 = #{dudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf28 != null" >
+        DUDF_28 = #{dudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf29 != null" >
+        DUDF_29 = #{dudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="dudf30 != null" >
+        DUDF_30 = #{dudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productLot != null" >
+        PRODUCT_LOT = #{productLot,jdbcType=NVARCHAR},
+      </if>
+      <if test="productBatch != null" >
+        PRODUCT_BATCH = #{productBatch,jdbcType=NVARCHAR},
+      </if>
+      <if test="discrepancyQty != null" >
+        DISCREPANCY_QTY = #{discrepancyQty,jdbcType=NUMERIC},
+      </if>
+      <if test="preAllocatedQty != null" >
+        PRE_ALLOCATED_QTY = #{preAllocatedQty,jdbcType=NUMERIC},
+      </if>
+      <if test="skuUpc != null" >
+        SKU_UPC = #{skuUpc,jdbcType=NVARCHAR},
+      </if>
+      <if test="preallocateStatus != null" >
+        PREALLOCATE_STATUS = #{preallocateStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="psoLineSeq != null" >
+        PSO_LINE_SEQ = #{psoLineSeq,jdbcType=BIGINT},
+      </if>
+    </set>
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+      and REL_LINE_SEQ = #{relLineSeq,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.bus.REL_DTL" >
+    update REL_DTL
+    set STATUS = #{status,jdbcType=NVARCHAR},
+      SKU = #{sku,jdbcType=NVARCHAR},
+      SKU_DESC = #{skuDesc,jdbcType=NVARCHAR},
+      SKU_STATUS = #{skuStatus,jdbcType=NVARCHAR},
+      PACKAGE_CODE = #{packageCode,jdbcType=NVARCHAR},
+      PACKAGE_QTY = #{packageQty,jdbcType=NUMERIC},
+      UNIT_PRICE = #{unitPrice,jdbcType=NUMERIC},
+      EXPIRY_DATE = #{expiryDate,jdbcType=TIMESTAMP},
+      MANUF_DATE = #{manufDate,jdbcType=TIMESTAMP},
+      ALLOCATE_RULE_01 = #{allocateRule01,jdbcType=NVARCHAR},
+      ALLOCATE_RULE_02 = #{allocateRule02,jdbcType=NVARCHAR},
+      RELEASE_QTY = #{releaseQty,jdbcType=NUMERIC},
+      REL_BASE_QTY = #{relBaseQty,jdbcType=NUMERIC},
+      ALLOCATED_QTY = #{allocatedQty,jdbcType=NUMERIC},
+      PICKED_QTY = #{pickedQty,jdbcType=NUMERIC},
+      SHIPPED_QTY = #{shippedQty,jdbcType=NUMERIC},
+      LOT_ID = #{lotId,jdbcType=NVARCHAR},
+      ORIGINAL_LOT_ID = #{originalLotId,jdbcType=NVARCHAR},
+      LOCATION = #{location,jdbcType=NVARCHAR},
+      CARTON_NO = #{cartonNo,jdbcType=NVARCHAR},
+      PALLET_NO = #{palletNo,jdbcType=NVARCHAR},
+      REC_LINE_SEQ = #{recLineSeq,jdbcType=BIGINT},
+      DUDF_01 = #{dudf01,jdbcType=NVARCHAR},
+      DUDF_02 = #{dudf02,jdbcType=NVARCHAR},
+      DUDF_03 = #{dudf03,jdbcType=NVARCHAR},
+      DUDF_04 = #{dudf04,jdbcType=NVARCHAR},
+      DUDF_05 = #{dudf05,jdbcType=NVARCHAR},
+      DUDF_06 = #{dudf06,jdbcType=NVARCHAR},
+      DUDF_07 = #{dudf07,jdbcType=NVARCHAR},
+      DUDF_08 = #{dudf08,jdbcType=NVARCHAR},
+      DUDF_09 = #{dudf09,jdbcType=NVARCHAR},
+      DUDF_10 = #{dudf10,jdbcType=NVARCHAR},
+      DUDF_11 = #{dudf11,jdbcType=NVARCHAR},
+      DUDF_12 = #{dudf12,jdbcType=NVARCHAR},
+      DUDF_13 = #{dudf13,jdbcType=NVARCHAR},
+      DUDF_14 = #{dudf14,jdbcType=NVARCHAR},
+      DUDF_15 = #{dudf15,jdbcType=NVARCHAR},
+      DUDF_16 = #{dudf16,jdbcType=NVARCHAR},
+      DUDF_17 = #{dudf17,jdbcType=NVARCHAR},
+      DUDF_18 = #{dudf18,jdbcType=NVARCHAR},
+      DUDF_19 = #{dudf19,jdbcType=NVARCHAR},
+      DUDF_20 = #{dudf20,jdbcType=NVARCHAR},
+      DUDF_21 = #{dudf21,jdbcType=NVARCHAR},
+      DUDF_22 = #{dudf22,jdbcType=NVARCHAR},
+      DUDF_23 = #{dudf23,jdbcType=NVARCHAR},
+      DUDF_24 = #{dudf24,jdbcType=NVARCHAR},
+      DUDF_25 = #{dudf25,jdbcType=NVARCHAR},
+      DUDF_26 = #{dudf26,jdbcType=NVARCHAR},
+      DUDF_27 = #{dudf27,jdbcType=NVARCHAR},
+      DUDF_28 = #{dudf28,jdbcType=NVARCHAR},
+      DUDF_29 = #{dudf29,jdbcType=NVARCHAR},
+      DUDF_30 = #{dudf30,jdbcType=NVARCHAR},
+      REMARKS = #{remarks,jdbcType=NVARCHAR},
+      VERSION = #{version,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      PRODUCT_LOT = #{productLot,jdbcType=NVARCHAR},
+      PRODUCT_BATCH = #{productBatch,jdbcType=NVARCHAR},
+      DISCREPANCY_QTY = #{discrepancyQty,jdbcType=NUMERIC},
+      PRE_ALLOCATED_QTY = #{preAllocatedQty,jdbcType=NUMERIC},
+      SKU_UPC = #{skuUpc,jdbcType=NVARCHAR},
+      PREALLOCATE_STATUS = #{preallocateStatus,jdbcType=NVARCHAR},
+      PSO_LINE_SEQ = #{psoLineSeq,jdbcType=BIGINT}
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+      and REL_LINE_SEQ = #{relLineSeq,jdbcType=BIGINT}
+  </update>
+</mapper>

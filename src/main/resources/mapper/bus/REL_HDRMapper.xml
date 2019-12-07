@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.bus.REL_HDRMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.bus.REL_HDR" >
+    <id column="WORK_CENTER" property="workCenter" jdbcType="NVARCHAR" />
+    <id column="STORER_ID" property="storerId" jdbcType="NVARCHAR" />
+    <id column="REL_ID" property="relId" jdbcType="NVARCHAR" />
+    <id column="BATCH_NO" property="batchNo" jdbcType="INTEGER" />
+    <result column="STATUS" property="status" jdbcType="NVARCHAR" />
+    <result column="ORDER_TYPE" property="orderType" jdbcType="NVARCHAR" />
+    <result column="ORDER_FLAG" property="orderFlag" jdbcType="NVARCHAR" />
+    <result column="ORDER_SOURCE" property="orderSource" jdbcType="NVARCHAR" />
+    <result column="WAREHOUSE" property="warehouse" jdbcType="NVARCHAR" />
+    <result column="SOP_TYPE" property="sopType" jdbcType="NVARCHAR" />
+    <result column="RELEASE_DATE" property="releaseDate" jdbcType="TIMESTAMP" />
+    <result column="ALLOCATED_DATE" property="allocatedDate" jdbcType="TIMESTAMP" />
+    <result column="PICKED_DATE" property="pickedDate" jdbcType="TIMESTAMP" />
+    <result column="PACKED_DATE" property="packedDate" jdbcType="TIMESTAMP" />
+    <result column="SHIPPED_DATE" property="shippedDate" jdbcType="TIMESTAMP" />
+    <result column="DELIVERY_DATE" property="deliveryDate" jdbcType="TIMESTAMP" />
+    <result column="IS_CHARGE" property="isCharge" jdbcType="CHAR" />
+    <result column="PO_NO" property="poNo" jdbcType="NVARCHAR" />
+    <result column="INV_NO" property="invNo" jdbcType="NVARCHAR" />
+    <result column="SO_NO" property="soNo" jdbcType="NVARCHAR" />
+    <result column="CARRIER" property="carrier" jdbcType="NVARCHAR" />
+    <result column="TRACKING_NO" property="trackingNo" jdbcType="NVARCHAR" />
+    <result column="CUSTODIAN" property="custodian" jdbcType="NVARCHAR" />
+    <result column="BRAND" property="brand" jdbcType="NVARCHAR" />
+    <result column="SKU_COUNT" property="skuCount" jdbcType="INTEGER" />
+    <result column="GOODS_COUNT" property="goodsCount" jdbcType="INTEGER" />
+    <result column="WAVE_ID" property="waveId" jdbcType="NVARCHAR" />
+    <result column="CONSIGNEE" property="consignee" jdbcType="NVARCHAR" />
+    <result column="CON_NAME" property="conName" jdbcType="NVARCHAR" />
+    <result column="CON_ADDRESS" property="conAddress" jdbcType="NVARCHAR" />
+    <result column="CON_DIVISION" property="conDivision" jdbcType="NVARCHAR" />
+    <result column="CON_TOWN" property="conTown" jdbcType="NVARCHAR" />
+    <result column="CON_ZONE" property="conZone" jdbcType="NVARCHAR" />
+    <result column="CON_CITY" property="conCity" jdbcType="NVARCHAR" />
+    <result column="CON_PROVINCE" property="conProvince" jdbcType="NVARCHAR" />
+    <result column="CON_COUNTRY" property="conCountry" jdbcType="NVARCHAR" />
+    <result column="CON_ZIP" property="conZip" jdbcType="NVARCHAR" />
+    <result column="CON_CONTACT_NAME" property="conContactName" jdbcType="NVARCHAR" />
+    <result column="CON_CONTACT_PHONE" property="conContactPhone" jdbcType="NVARCHAR" />
+    <result column="CON_CONTACT_FAX" property="conContactFax" jdbcType="NVARCHAR" />
+    <result column="CON_CONTACT_EMAIL" property="conContactEmail" jdbcType="NVARCHAR" />
+    <result column="CON_REMARKS" property="conRemarks" jdbcType="NVARCHAR" />
+    <result column="SHIP_TO" property="shipTo" jdbcType="NVARCHAR" />
+    <result column="ST_NAME" property="stName" jdbcType="NVARCHAR" />
+    <result column="ST_ADDRESS" property="stAddress" jdbcType="NVARCHAR" />
+    <result column="ST_DIVISION" property="stDivision" jdbcType="NVARCHAR" />
+    <result column="ST_TOWN" property="stTown" jdbcType="NVARCHAR" />
+    <result column="ST_ZONE" property="stZone" jdbcType="NVARCHAR" />
+    <result column="ST_CITY" property="stCity" jdbcType="NVARCHAR" />
+    <result column="ST_PROVINCE" property="stProvince" jdbcType="NVARCHAR" />
+    <result column="ST_COUNTRY" property="stCountry" jdbcType="NVARCHAR" />
+    <result column="ST_ZIP" property="stZip" jdbcType="NVARCHAR" />
+    <result column="ST_CONTACT_NAME" property="stContactName" jdbcType="NVARCHAR" />
+    <result column="ST_CONTACT_PHONE" property="stContactPhone" jdbcType="NVARCHAR" />
+    <result column="ST_CONTACT_FAX" property="stContactFax" jdbcType="NVARCHAR" />
+    <result column="ST_CONTACT_EMAIL" property="stContactEmail" jdbcType="NVARCHAR" />
+    <result column="ST_REMARKS" property="stRemarks" jdbcType="NVARCHAR" />
+    <result column="REC_ID" property="recId" jdbcType="NVARCHAR" />
+    <result column="REC_BATCH_NO" property="recBatchNo" jdbcType="INTEGER" />
+    <result column="IS_SENT_SC" property="isSentSc" jdbcType="CHAR" />
+    <result column="EDI_UP_ID" property="ediUpId" jdbcType="NVARCHAR" />
+    <result column="EDI_BACK_ID" property="ediBackId" jdbcType="NVARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="NVARCHAR" />
+    <result column="HUDF_01" property="hudf01" jdbcType="NVARCHAR" />
+    <result column="HUDF_02" property="hudf02" jdbcType="NVARCHAR" />
+    <result column="HUDF_03" property="hudf03" jdbcType="NVARCHAR" />
+    <result column="HUDF_04" property="hudf04" jdbcType="NVARCHAR" />
+    <result column="HUDF_05" property="hudf05" jdbcType="NVARCHAR" />
+    <result column="HUDF_06" property="hudf06" jdbcType="NVARCHAR" />
+    <result column="HUDF_07" property="hudf07" jdbcType="NVARCHAR" />
+    <result column="HUDF_08" property="hudf08" jdbcType="NVARCHAR" />
+    <result column="HUDF_09" property="hudf09" jdbcType="NVARCHAR" />
+    <result column="HUDF_10" property="hudf10" jdbcType="NVARCHAR" />
+    <result column="HUDF_11" property="hudf11" jdbcType="NVARCHAR" />
+    <result column="HUDF_12" property="hudf12" jdbcType="NVARCHAR" />
+    <result column="HUDF_13" property="hudf13" jdbcType="NVARCHAR" />
+    <result column="HUDF_14" property="hudf14" jdbcType="NVARCHAR" />
+    <result column="HUDF_15" property="hudf15" jdbcType="NVARCHAR" />
+    <result column="HUDF_16" property="hudf16" jdbcType="NVARCHAR" />
+    <result column="HUDF_17" property="hudf17" jdbcType="NVARCHAR" />
+    <result column="HUDF_18" property="hudf18" jdbcType="NVARCHAR" />
+    <result column="HUDF_19" property="hudf19" jdbcType="NVARCHAR" />
+    <result column="HUDF_20" property="hudf20" jdbcType="NVARCHAR" />
+    <result column="HUDF_21" property="hudf21" jdbcType="NVARCHAR" />
+    <result column="HUDF_22" property="hudf22" jdbcType="NVARCHAR" />
+    <result column="HUDF_23" property="hudf23" jdbcType="NVARCHAR" />
+    <result column="HUDF_24" property="hudf24" jdbcType="NVARCHAR" />
+    <result column="HUDF_25" property="hudf25" jdbcType="NVARCHAR" />
+    <result column="HUDF_26" property="hudf26" jdbcType="NVARCHAR" />
+    <result column="HUDF_27" property="hudf27" jdbcType="NVARCHAR" />
+    <result column="HUDF_28" property="hudf28" jdbcType="NVARCHAR" />
+    <result column="HUDF_29" property="hudf29" jdbcType="NVARCHAR" />
+    <result column="HUDF_30" property="hudf30" jdbcType="NVARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="NVARCHAR" />
+    <result column="VERSION" property="version" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="NVARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_BY" property="modifyBy" jdbcType="NVARCHAR" />
+    <result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="SHOP_CODE" property="shopCode" jdbcType="NVARCHAR" />
+    <result column="SHOP_NICK" property="shopNick" jdbcType="NVARCHAR" />
+    <result column="MEMO" property="memo" jdbcType="NVARCHAR" />
+    <result column="CARRIER_ORIGIN" property="carrierOrigin" jdbcType="NVARCHAR" />
+    <result column="ANALYSIS_SKU" property="analysisSku" jdbcType="NVARCHAR" />
+    <result column="ANALYSIS_ZONE" property="analysisZone" jdbcType="NVARCHAR" />
+    <result column="ANALYSIS_AISLE" property="analysisAisle" jdbcType="NVARCHAR" />
+    <result column="PRE_ALLOCATED_DATE" property="preAllocatedDate" jdbcType="TIMESTAMP" />
+    <result column="CUSTOM_TYPE" property="customType" jdbcType="NVARCHAR" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="NVARCHAR" />
+    <result column="IS_AUDIT" property="isAudit" jdbcType="CHAR" />
+    <result column="TRACKING_NO_EDI" property="trackingNoEdi" jdbcType="NVARCHAR" />
+    <result column="ANALYSIS_LOCATION" property="analysisLocation" jdbcType="NVARCHAR" />
+    <result column="IS_SEND_XB" property="isSendXb" jdbcType="CHAR" />
+    <result column="SEND_STATUS" property="sendStatus" jdbcType="NVARCHAR" />
+    <result column="SERVICE_REMARKS" property="serviceRemarks" jdbcType="NVARCHAR" />
+    <result column="MXT_ID" property="mxtId" jdbcType="NVARCHAR" />
+    <result column="PREALLOCATE_STATUS" property="preallocateStatus" jdbcType="NVARCHAR" />
+    <result column="PLAT_PAY_DATE" property="platPayDate" jdbcType="TIMESTAMP" />
+    <result column="PLAT_ADD_DATE" property="platAddDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    WORK_CENTER, STORER_ID, REL_ID, BATCH_NO, STATUS, ORDER_TYPE, ORDER_FLAG, ORDER_SOURCE, 
+    WAREHOUSE, SOP_TYPE, RELEASE_DATE, ALLOCATED_DATE, PICKED_DATE, PACKED_DATE, SHIPPED_DATE, 
+    DELIVERY_DATE, IS_CHARGE, PO_NO, INV_NO, SO_NO, CARRIER, TRACKING_NO, CUSTODIAN, 
+    BRAND, SKU_COUNT, GOODS_COUNT, WAVE_ID, CONSIGNEE, CON_NAME, CON_ADDRESS, CON_DIVISION, 
+    CON_TOWN, CON_ZONE, CON_CITY, CON_PROVINCE, CON_COUNTRY, CON_ZIP, CON_CONTACT_NAME, 
+    CON_CONTACT_PHONE, CON_CONTACT_FAX, CON_CONTACT_EMAIL, CON_REMARKS, SHIP_TO, ST_NAME, 
+    ST_ADDRESS, ST_DIVISION, ST_TOWN, ST_ZONE, ST_CITY, ST_PROVINCE, ST_COUNTRY, ST_ZIP, 
+    ST_CONTACT_NAME, ST_CONTACT_PHONE, ST_CONTACT_FAX, ST_CONTACT_EMAIL, ST_REMARKS, 
+    REC_ID, REC_BATCH_NO, IS_SENT_SC, EDI_UP_ID, EDI_BACK_ID, FILE_NAME, HUDF_01, HUDF_02, 
+    HUDF_03, HUDF_04, HUDF_05, HUDF_06, HUDF_07, HUDF_08, HUDF_09, HUDF_10, HUDF_11, 
+    HUDF_12, HUDF_13, HUDF_14, HUDF_15, HUDF_16, HUDF_17, HUDF_18, HUDF_19, HUDF_20, 
+    HUDF_21, HUDF_22, HUDF_23, HUDF_24, HUDF_25, HUDF_26, HUDF_27, HUDF_28, HUDF_29, 
+    HUDF_30, REMARKS, VERSION, CREATE_BY, CREATE_DATE, MODIFY_BY, MODIFY_DATE, SHOP_CODE, 
+    SHOP_NICK, MEMO, CARRIER_ORIGIN, ANALYSIS_SKU, ANALYSIS_ZONE, ANALYSIS_AISLE, PRE_ALLOCATED_DATE, 
+    CUSTOM_TYPE, BUSINESS_TYPE, IS_AUDIT, TRACKING_NO_EDI, ANALYSIS_LOCATION, IS_SEND_XB, 
+    SEND_STATUS, SERVICE_REMARKS, MXT_ID, PREALLOCATE_STATUS, PLAT_PAY_DATE, PLAT_ADD_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.customs.hwms.entity.bus.REL_HDRKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from REL_HDR
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.customs.hwms.entity.bus.REL_HDRKey" >
+    delete from REL_HDR
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.bus.REL_HDR" >
+    insert into REL_HDR (WORK_CENTER, STORER_ID, REL_ID, 
+      BATCH_NO, STATUS, ORDER_TYPE, 
+      ORDER_FLAG, ORDER_SOURCE, WAREHOUSE, 
+      SOP_TYPE, RELEASE_DATE, ALLOCATED_DATE, 
+      PICKED_DATE, PACKED_DATE, SHIPPED_DATE, 
+      DELIVERY_DATE, IS_CHARGE, PO_NO, 
+      INV_NO, SO_NO, CARRIER, 
+      TRACKING_NO, CUSTODIAN, BRAND, 
+      SKU_COUNT, GOODS_COUNT, WAVE_ID, 
+      CONSIGNEE, CON_NAME, CON_ADDRESS, 
+      CON_DIVISION, CON_TOWN, CON_ZONE, 
+      CON_CITY, CON_PROVINCE, CON_COUNTRY, 
+      CON_ZIP, CON_CONTACT_NAME, CON_CONTACT_PHONE, 
+      CON_CONTACT_FAX, CON_CONTACT_EMAIL, CON_REMARKS, 
+      SHIP_TO, ST_NAME, ST_ADDRESS, 
+      ST_DIVISION, ST_TOWN, ST_ZONE, 
+      ST_CITY, ST_PROVINCE, ST_COUNTRY, 
+      ST_ZIP, ST_CONTACT_NAME, ST_CONTACT_PHONE, 
+      ST_CONTACT_FAX, ST_CONTACT_EMAIL, ST_REMARKS, 
+      REC_ID, REC_BATCH_NO, IS_SENT_SC, 
+      EDI_UP_ID, EDI_BACK_ID, FILE_NAME, 
+      HUDF_01, HUDF_02, HUDF_03, 
+      HUDF_04, HUDF_05, HUDF_06, 
+      HUDF_07, HUDF_08, HUDF_09, 
+      HUDF_10, HUDF_11, HUDF_12, 
+      HUDF_13, HUDF_14, HUDF_15, 
+      HUDF_16, HUDF_17, HUDF_18, 
+      HUDF_19, HUDF_20, HUDF_21, 
+      HUDF_22, HUDF_23, HUDF_24, 
+      HUDF_25, HUDF_26, HUDF_27, 
+      HUDF_28, HUDF_29, HUDF_30, 
+      REMARKS, VERSION, CREATE_BY, 
+      CREATE_DATE, MODIFY_BY, MODIFY_DATE, 
+      SHOP_CODE, SHOP_NICK, MEMO, 
+      CARRIER_ORIGIN, ANALYSIS_SKU, ANALYSIS_ZONE, 
+      ANALYSIS_AISLE, PRE_ALLOCATED_DATE, CUSTOM_TYPE, 
+      BUSINESS_TYPE, IS_AUDIT, TRACKING_NO_EDI, 
+      ANALYSIS_LOCATION, IS_SEND_XB, SEND_STATUS, 
+      SERVICE_REMARKS, MXT_ID, PREALLOCATE_STATUS, 
+      PLAT_PAY_DATE, PLAT_ADD_DATE)
+    values (#{workCenter,jdbcType=NVARCHAR}, #{storerId,jdbcType=NVARCHAR}, #{relId,jdbcType=NVARCHAR}, 
+      #{batchNo,jdbcType=INTEGER}, #{status,jdbcType=NVARCHAR}, #{orderType,jdbcType=NVARCHAR}, 
+      #{orderFlag,jdbcType=NVARCHAR}, #{orderSource,jdbcType=NVARCHAR}, #{warehouse,jdbcType=NVARCHAR}, 
+      #{sopType,jdbcType=NVARCHAR}, #{releaseDate,jdbcType=TIMESTAMP}, #{allocatedDate,jdbcType=TIMESTAMP}, 
+      #{pickedDate,jdbcType=TIMESTAMP}, #{packedDate,jdbcType=TIMESTAMP}, #{shippedDate,jdbcType=TIMESTAMP}, 
+      #{deliveryDate,jdbcType=TIMESTAMP}, #{isCharge,jdbcType=CHAR}, #{poNo,jdbcType=NVARCHAR}, 
+      #{invNo,jdbcType=NVARCHAR}, #{soNo,jdbcType=NVARCHAR}, #{carrier,jdbcType=NVARCHAR}, 
+      #{trackingNo,jdbcType=NVARCHAR}, #{custodian,jdbcType=NVARCHAR}, #{brand,jdbcType=NVARCHAR}, 
+      #{skuCount,jdbcType=INTEGER}, #{goodsCount,jdbcType=INTEGER}, #{waveId,jdbcType=NVARCHAR}, 
+      #{consignee,jdbcType=NVARCHAR}, #{conName,jdbcType=NVARCHAR}, #{conAddress,jdbcType=NVARCHAR}, 
+      #{conDivision,jdbcType=NVARCHAR}, #{conTown,jdbcType=NVARCHAR}, #{conZone,jdbcType=NVARCHAR}, 
+      #{conCity,jdbcType=NVARCHAR}, #{conProvince,jdbcType=NVARCHAR}, #{conCountry,jdbcType=NVARCHAR}, 
+      #{conZip,jdbcType=NVARCHAR}, #{conContactName,jdbcType=NVARCHAR}, #{conContactPhone,jdbcType=NVARCHAR}, 
+      #{conContactFax,jdbcType=NVARCHAR}, #{conContactEmail,jdbcType=NVARCHAR}, #{conRemarks,jdbcType=NVARCHAR}, 
+      #{shipTo,jdbcType=NVARCHAR}, #{stName,jdbcType=NVARCHAR}, #{stAddress,jdbcType=NVARCHAR}, 
+      #{stDivision,jdbcType=NVARCHAR}, #{stTown,jdbcType=NVARCHAR}, #{stZone,jdbcType=NVARCHAR}, 
+      #{stCity,jdbcType=NVARCHAR}, #{stProvince,jdbcType=NVARCHAR}, #{stCountry,jdbcType=NVARCHAR}, 
+      #{stZip,jdbcType=NVARCHAR}, #{stContactName,jdbcType=NVARCHAR}, #{stContactPhone,jdbcType=NVARCHAR}, 
+      #{stContactFax,jdbcType=NVARCHAR}, #{stContactEmail,jdbcType=NVARCHAR}, #{stRemarks,jdbcType=NVARCHAR}, 
+      #{recId,jdbcType=NVARCHAR}, #{recBatchNo,jdbcType=INTEGER}, #{isSentSc,jdbcType=CHAR}, 
+      #{ediUpId,jdbcType=NVARCHAR}, #{ediBackId,jdbcType=NVARCHAR}, #{fileName,jdbcType=NVARCHAR}, 
+      #{hudf01,jdbcType=NVARCHAR}, #{hudf02,jdbcType=NVARCHAR}, #{hudf03,jdbcType=NVARCHAR}, 
+      #{hudf04,jdbcType=NVARCHAR}, #{hudf05,jdbcType=NVARCHAR}, #{hudf06,jdbcType=NVARCHAR}, 
+      #{hudf07,jdbcType=NVARCHAR}, #{hudf08,jdbcType=NVARCHAR}, #{hudf09,jdbcType=NVARCHAR}, 
+      #{hudf10,jdbcType=NVARCHAR}, #{hudf11,jdbcType=NVARCHAR}, #{hudf12,jdbcType=NVARCHAR}, 
+      #{hudf13,jdbcType=NVARCHAR}, #{hudf14,jdbcType=NVARCHAR}, #{hudf15,jdbcType=NVARCHAR}, 
+      #{hudf16,jdbcType=NVARCHAR}, #{hudf17,jdbcType=NVARCHAR}, #{hudf18,jdbcType=NVARCHAR}, 
+      #{hudf19,jdbcType=NVARCHAR}, #{hudf20,jdbcType=NVARCHAR}, #{hudf21,jdbcType=NVARCHAR}, 
+      #{hudf22,jdbcType=NVARCHAR}, #{hudf23,jdbcType=NVARCHAR}, #{hudf24,jdbcType=NVARCHAR}, 
+      #{hudf25,jdbcType=NVARCHAR}, #{hudf26,jdbcType=NVARCHAR}, #{hudf27,jdbcType=NVARCHAR}, 
+      #{hudf28,jdbcType=NVARCHAR}, #{hudf29,jdbcType=NVARCHAR}, #{hudf30,jdbcType=NVARCHAR}, 
+      #{remarks,jdbcType=NVARCHAR}, #{version,jdbcType=INTEGER}, #{createBy,jdbcType=NVARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=NVARCHAR}, #{modifyDate,jdbcType=TIMESTAMP}, 
+      #{shopCode,jdbcType=NVARCHAR}, #{shopNick,jdbcType=NVARCHAR}, #{memo,jdbcType=NVARCHAR}, 
+      #{carrierOrigin,jdbcType=NVARCHAR}, #{analysisSku,jdbcType=NVARCHAR}, #{analysisZone,jdbcType=NVARCHAR}, 
+      #{analysisAisle,jdbcType=NVARCHAR}, #{preAllocatedDate,jdbcType=TIMESTAMP}, #{customType,jdbcType=NVARCHAR}, 
+      #{businessType,jdbcType=NVARCHAR}, #{isAudit,jdbcType=CHAR}, #{trackingNoEdi,jdbcType=NVARCHAR}, 
+      #{analysisLocation,jdbcType=NVARCHAR}, #{isSendXb,jdbcType=CHAR}, #{sendStatus,jdbcType=NVARCHAR}, 
+      #{serviceRemarks,jdbcType=NVARCHAR}, #{mxtId,jdbcType=NVARCHAR}, #{preallocateStatus,jdbcType=NVARCHAR}, 
+      #{platPayDate,jdbcType=TIMESTAMP}, #{platAddDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.bus.REL_HDR" >
+    insert into REL_HDR
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        WORK_CENTER,
+      </if>
+      <if test="storerId != null" >
+        STORER_ID,
+      </if>
+      <if test="relId != null" >
+        REL_ID,
+      </if>
+      <if test="batchNo != null" >
+        BATCH_NO,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="orderType != null" >
+        ORDER_TYPE,
+      </if>
+      <if test="orderFlag != null" >
+        ORDER_FLAG,
+      </if>
+      <if test="orderSource != null" >
+        ORDER_SOURCE,
+      </if>
+      <if test="warehouse != null" >
+        WAREHOUSE,
+      </if>
+      <if test="sopType != null" >
+        SOP_TYPE,
+      </if>
+      <if test="releaseDate != null" >
+        RELEASE_DATE,
+      </if>
+      <if test="allocatedDate != null" >
+        ALLOCATED_DATE,
+      </if>
+      <if test="pickedDate != null" >
+        PICKED_DATE,
+      </if>
+      <if test="packedDate != null" >
+        PACKED_DATE,
+      </if>
+      <if test="shippedDate != null" >
+        SHIPPED_DATE,
+      </if>
+      <if test="deliveryDate != null" >
+        DELIVERY_DATE,
+      </if>
+      <if test="isCharge != null" >
+        IS_CHARGE,
+      </if>
+      <if test="poNo != null" >
+        PO_NO,
+      </if>
+      <if test="invNo != null" >
+        INV_NO,
+      </if>
+      <if test="soNo != null" >
+        SO_NO,
+      </if>
+      <if test="carrier != null" >
+        CARRIER,
+      </if>
+      <if test="trackingNo != null" >
+        TRACKING_NO,
+      </if>
+      <if test="custodian != null" >
+        CUSTODIAN,
+      </if>
+      <if test="brand != null" >
+        BRAND,
+      </if>
+      <if test="skuCount != null" >
+        SKU_COUNT,
+      </if>
+      <if test="goodsCount != null" >
+        GOODS_COUNT,
+      </if>
+      <if test="waveId != null" >
+        WAVE_ID,
+      </if>
+      <if test="consignee != null" >
+        CONSIGNEE,
+      </if>
+      <if test="conName != null" >
+        CON_NAME,
+      </if>
+      <if test="conAddress != null" >
+        CON_ADDRESS,
+      </if>
+      <if test="conDivision != null" >
+        CON_DIVISION,
+      </if>
+      <if test="conTown != null" >
+        CON_TOWN,
+      </if>
+      <if test="conZone != null" >
+        CON_ZONE,
+      </if>
+      <if test="conCity != null" >
+        CON_CITY,
+      </if>
+      <if test="conProvince != null" >
+        CON_PROVINCE,
+      </if>
+      <if test="conCountry != null" >
+        CON_COUNTRY,
+      </if>
+      <if test="conZip != null" >
+        CON_ZIP,
+      </if>
+      <if test="conContactName != null" >
+        CON_CONTACT_NAME,
+      </if>
+      <if test="conContactPhone != null" >
+        CON_CONTACT_PHONE,
+      </if>
+      <if test="conContactFax != null" >
+        CON_CONTACT_FAX,
+      </if>
+      <if test="conContactEmail != null" >
+        CON_CONTACT_EMAIL,
+      </if>
+      <if test="conRemarks != null" >
+        CON_REMARKS,
+      </if>
+      <if test="shipTo != null" >
+        SHIP_TO,
+      </if>
+      <if test="stName != null" >
+        ST_NAME,
+      </if>
+      <if test="stAddress != null" >
+        ST_ADDRESS,
+      </if>
+      <if test="stDivision != null" >
+        ST_DIVISION,
+      </if>
+      <if test="stTown != null" >
+        ST_TOWN,
+      </if>
+      <if test="stZone != null" >
+        ST_ZONE,
+      </if>
+      <if test="stCity != null" >
+        ST_CITY,
+      </if>
+      <if test="stProvince != null" >
+        ST_PROVINCE,
+      </if>
+      <if test="stCountry != null" >
+        ST_COUNTRY,
+      </if>
+      <if test="stZip != null" >
+        ST_ZIP,
+      </if>
+      <if test="stContactName != null" >
+        ST_CONTACT_NAME,
+      </if>
+      <if test="stContactPhone != null" >
+        ST_CONTACT_PHONE,
+      </if>
+      <if test="stContactFax != null" >
+        ST_CONTACT_FAX,
+      </if>
+      <if test="stContactEmail != null" >
+        ST_CONTACT_EMAIL,
+      </if>
+      <if test="stRemarks != null" >
+        ST_REMARKS,
+      </if>
+      <if test="recId != null" >
+        REC_ID,
+      </if>
+      <if test="recBatchNo != null" >
+        REC_BATCH_NO,
+      </if>
+      <if test="isSentSc != null" >
+        IS_SENT_SC,
+      </if>
+      <if test="ediUpId != null" >
+        EDI_UP_ID,
+      </if>
+      <if test="ediBackId != null" >
+        EDI_BACK_ID,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+      <if test="hudf01 != null" >
+        HUDF_01,
+      </if>
+      <if test="hudf02 != null" >
+        HUDF_02,
+      </if>
+      <if test="hudf03 != null" >
+        HUDF_03,
+      </if>
+      <if test="hudf04 != null" >
+        HUDF_04,
+      </if>
+      <if test="hudf05 != null" >
+        HUDF_05,
+      </if>
+      <if test="hudf06 != null" >
+        HUDF_06,
+      </if>
+      <if test="hudf07 != null" >
+        HUDF_07,
+      </if>
+      <if test="hudf08 != null" >
+        HUDF_08,
+      </if>
+      <if test="hudf09 != null" >
+        HUDF_09,
+      </if>
+      <if test="hudf10 != null" >
+        HUDF_10,
+      </if>
+      <if test="hudf11 != null" >
+        HUDF_11,
+      </if>
+      <if test="hudf12 != null" >
+        HUDF_12,
+      </if>
+      <if test="hudf13 != null" >
+        HUDF_13,
+      </if>
+      <if test="hudf14 != null" >
+        HUDF_14,
+      </if>
+      <if test="hudf15 != null" >
+        HUDF_15,
+      </if>
+      <if test="hudf16 != null" >
+        HUDF_16,
+      </if>
+      <if test="hudf17 != null" >
+        HUDF_17,
+      </if>
+      <if test="hudf18 != null" >
+        HUDF_18,
+      </if>
+      <if test="hudf19 != null" >
+        HUDF_19,
+      </if>
+      <if test="hudf20 != null" >
+        HUDF_20,
+      </if>
+      <if test="hudf21 != null" >
+        HUDF_21,
+      </if>
+      <if test="hudf22 != null" >
+        HUDF_22,
+      </if>
+      <if test="hudf23 != null" >
+        HUDF_23,
+      </if>
+      <if test="hudf24 != null" >
+        HUDF_24,
+      </if>
+      <if test="hudf25 != null" >
+        HUDF_25,
+      </if>
+      <if test="hudf26 != null" >
+        HUDF_26,
+      </if>
+      <if test="hudf27 != null" >
+        HUDF_27,
+      </if>
+      <if test="hudf28 != null" >
+        HUDF_28,
+      </if>
+      <if test="hudf29 != null" >
+        HUDF_29,
+      </if>
+      <if test="hudf30 != null" >
+        HUDF_30,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY,
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE,
+      </if>
+      <if test="shopCode != null" >
+        SHOP_CODE,
+      </if>
+      <if test="shopNick != null" >
+        SHOP_NICK,
+      </if>
+      <if test="memo != null" >
+        MEMO,
+      </if>
+      <if test="carrierOrigin != null" >
+        CARRIER_ORIGIN,
+      </if>
+      <if test="analysisSku != null" >
+        ANALYSIS_SKU,
+      </if>
+      <if test="analysisZone != null" >
+        ANALYSIS_ZONE,
+      </if>
+      <if test="analysisAisle != null" >
+        ANALYSIS_AISLE,
+      </if>
+      <if test="preAllocatedDate != null" >
+        PRE_ALLOCATED_DATE,
+      </if>
+      <if test="customType != null" >
+        CUSTOM_TYPE,
+      </if>
+      <if test="businessType != null" >
+        BUSINESS_TYPE,
+      </if>
+      <if test="isAudit != null" >
+        IS_AUDIT,
+      </if>
+      <if test="trackingNoEdi != null" >
+        TRACKING_NO_EDI,
+      </if>
+      <if test="analysisLocation != null" >
+        ANALYSIS_LOCATION,
+      </if>
+      <if test="isSendXb != null" >
+        IS_SEND_XB,
+      </if>
+      <if test="sendStatus != null" >
+        SEND_STATUS,
+      </if>
+      <if test="serviceRemarks != null" >
+        SERVICE_REMARKS,
+      </if>
+      <if test="mxtId != null" >
+        MXT_ID,
+      </if>
+      <if test="preallocateStatus != null" >
+        PREALLOCATE_STATUS,
+      </if>
+      <if test="platPayDate != null" >
+        PLAT_PAY_DATE,
+      </if>
+      <if test="platAddDate != null" >
+        PLAT_ADD_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        #{workCenter,jdbcType=NVARCHAR},
+      </if>
+      <if test="storerId != null" >
+        #{storerId,jdbcType=NVARCHAR},
+      </if>
+      <if test="relId != null" >
+        #{relId,jdbcType=NVARCHAR},
+      </if>
+      <if test="batchNo != null" >
+        #{batchNo,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderFlag != null" >
+        #{orderFlag,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderSource != null" >
+        #{orderSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="warehouse != null" >
+        #{warehouse,jdbcType=NVARCHAR},
+      </if>
+      <if test="sopType != null" >
+        #{sopType,jdbcType=NVARCHAR},
+      </if>
+      <if test="releaseDate != null" >
+        #{releaseDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allocatedDate != null" >
+        #{allocatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pickedDate != null" >
+        #{pickedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packedDate != null" >
+        #{packedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shippedDate != null" >
+        #{shippedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliveryDate != null" >
+        #{deliveryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCharge != null" >
+        #{isCharge,jdbcType=CHAR},
+      </if>
+      <if test="poNo != null" >
+        #{poNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="invNo != null" >
+        #{invNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="soNo != null" >
+        #{soNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="carrier != null" >
+        #{carrier,jdbcType=NVARCHAR},
+      </if>
+      <if test="trackingNo != null" >
+        #{trackingNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="custodian != null" >
+        #{custodian,jdbcType=NVARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuCount != null" >
+        #{skuCount,jdbcType=INTEGER},
+      </if>
+      <if test="goodsCount != null" >
+        #{goodsCount,jdbcType=INTEGER},
+      </if>
+      <if test="waveId != null" >
+        #{waveId,jdbcType=NVARCHAR},
+      </if>
+      <if test="consignee != null" >
+        #{consignee,jdbcType=NVARCHAR},
+      </if>
+      <if test="conName != null" >
+        #{conName,jdbcType=NVARCHAR},
+      </if>
+      <if test="conAddress != null" >
+        #{conAddress,jdbcType=NVARCHAR},
+      </if>
+      <if test="conDivision != null" >
+        #{conDivision,jdbcType=NVARCHAR},
+      </if>
+      <if test="conTown != null" >
+        #{conTown,jdbcType=NVARCHAR},
+      </if>
+      <if test="conZone != null" >
+        #{conZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="conCity != null" >
+        #{conCity,jdbcType=NVARCHAR},
+      </if>
+      <if test="conProvince != null" >
+        #{conProvince,jdbcType=NVARCHAR},
+      </if>
+      <if test="conCountry != null" >
+        #{conCountry,jdbcType=NVARCHAR},
+      </if>
+      <if test="conZip != null" >
+        #{conZip,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactName != null" >
+        #{conContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactPhone != null" >
+        #{conContactPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactFax != null" >
+        #{conContactFax,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactEmail != null" >
+        #{conContactEmail,jdbcType=NVARCHAR},
+      </if>
+      <if test="conRemarks != null" >
+        #{conRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="shipTo != null" >
+        #{shipTo,jdbcType=NVARCHAR},
+      </if>
+      <if test="stName != null" >
+        #{stName,jdbcType=NVARCHAR},
+      </if>
+      <if test="stAddress != null" >
+        #{stAddress,jdbcType=NVARCHAR},
+      </if>
+      <if test="stDivision != null" >
+        #{stDivision,jdbcType=NVARCHAR},
+      </if>
+      <if test="stTown != null" >
+        #{stTown,jdbcType=NVARCHAR},
+      </if>
+      <if test="stZone != null" >
+        #{stZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="stCity != null" >
+        #{stCity,jdbcType=NVARCHAR},
+      </if>
+      <if test="stProvince != null" >
+        #{stProvince,jdbcType=NVARCHAR},
+      </if>
+      <if test="stCountry != null" >
+        #{stCountry,jdbcType=NVARCHAR},
+      </if>
+      <if test="stZip != null" >
+        #{stZip,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactName != null" >
+        #{stContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactPhone != null" >
+        #{stContactPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactFax != null" >
+        #{stContactFax,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactEmail != null" >
+        #{stContactEmail,jdbcType=NVARCHAR},
+      </if>
+      <if test="stRemarks != null" >
+        #{stRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="recId != null" >
+        #{recId,jdbcType=NVARCHAR},
+      </if>
+      <if test="recBatchNo != null" >
+        #{recBatchNo,jdbcType=INTEGER},
+      </if>
+      <if test="isSentSc != null" >
+        #{isSentSc,jdbcType=CHAR},
+      </if>
+      <if test="ediUpId != null" >
+        #{ediUpId,jdbcType=NVARCHAR},
+      </if>
+      <if test="ediBackId != null" >
+        #{ediBackId,jdbcType=NVARCHAR},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf01 != null" >
+        #{hudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf02 != null" >
+        #{hudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf03 != null" >
+        #{hudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf04 != null" >
+        #{hudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf05 != null" >
+        #{hudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf06 != null" >
+        #{hudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf07 != null" >
+        #{hudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf08 != null" >
+        #{hudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf09 != null" >
+        #{hudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf10 != null" >
+        #{hudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf11 != null" >
+        #{hudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf12 != null" >
+        #{hudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf13 != null" >
+        #{hudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf14 != null" >
+        #{hudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf15 != null" >
+        #{hudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf16 != null" >
+        #{hudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf17 != null" >
+        #{hudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf18 != null" >
+        #{hudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf19 != null" >
+        #{hudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf20 != null" >
+        #{hudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf21 != null" >
+        #{hudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf22 != null" >
+        #{hudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf23 != null" >
+        #{hudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf24 != null" >
+        #{hudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf25 != null" >
+        #{hudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf26 != null" >
+        #{hudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf27 != null" >
+        #{hudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf28 != null" >
+        #{hudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf29 != null" >
+        #{hudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf30 != null" >
+        #{hudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopCode != null" >
+        #{shopCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="shopNick != null" >
+        #{shopNick,jdbcType=NVARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=NVARCHAR},
+      </if>
+      <if test="carrierOrigin != null" >
+        #{carrierOrigin,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisSku != null" >
+        #{analysisSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisZone != null" >
+        #{analysisZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisAisle != null" >
+        #{analysisAisle,jdbcType=NVARCHAR},
+      </if>
+      <if test="preAllocatedDate != null" >
+        #{preAllocatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customType != null" >
+        #{customType,jdbcType=NVARCHAR},
+      </if>
+      <if test="businessType != null" >
+        #{businessType,jdbcType=NVARCHAR},
+      </if>
+      <if test="isAudit != null" >
+        #{isAudit,jdbcType=CHAR},
+      </if>
+      <if test="trackingNoEdi != null" >
+        #{trackingNoEdi,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisLocation != null" >
+        #{analysisLocation,jdbcType=NVARCHAR},
+      </if>
+      <if test="isSendXb != null" >
+        #{isSendXb,jdbcType=CHAR},
+      </if>
+      <if test="sendStatus != null" >
+        #{sendStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="serviceRemarks != null" >
+        #{serviceRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="mxtId != null" >
+        #{mxtId,jdbcType=NVARCHAR},
+      </if>
+      <if test="preallocateStatus != null" >
+        #{preallocateStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="platPayDate != null" >
+        #{platPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platAddDate != null" >
+        #{platAddDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.bus.REL_HDR" >
+    update REL_HDR
+    <set >
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderType != null" >
+        ORDER_TYPE = #{orderType,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderFlag != null" >
+        ORDER_FLAG = #{orderFlag,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderSource != null" >
+        ORDER_SOURCE = #{orderSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="warehouse != null" >
+        WAREHOUSE = #{warehouse,jdbcType=NVARCHAR},
+      </if>
+      <if test="sopType != null" >
+        SOP_TYPE = #{sopType,jdbcType=NVARCHAR},
+      </if>
+      <if test="releaseDate != null" >
+        RELEASE_DATE = #{releaseDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allocatedDate != null" >
+        ALLOCATED_DATE = #{allocatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pickedDate != null" >
+        PICKED_DATE = #{pickedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packedDate != null" >
+        PACKED_DATE = #{packedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shippedDate != null" >
+        SHIPPED_DATE = #{shippedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliveryDate != null" >
+        DELIVERY_DATE = #{deliveryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCharge != null" >
+        IS_CHARGE = #{isCharge,jdbcType=CHAR},
+      </if>
+      <if test="poNo != null" >
+        PO_NO = #{poNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="invNo != null" >
+        INV_NO = #{invNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="soNo != null" >
+        SO_NO = #{soNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="carrier != null" >
+        CARRIER = #{carrier,jdbcType=NVARCHAR},
+      </if>
+      <if test="trackingNo != null" >
+        TRACKING_NO = #{trackingNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="custodian != null" >
+        CUSTODIAN = #{custodian,jdbcType=NVARCHAR},
+      </if>
+      <if test="brand != null" >
+        BRAND = #{brand,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuCount != null" >
+        SKU_COUNT = #{skuCount,jdbcType=INTEGER},
+      </if>
+      <if test="goodsCount != null" >
+        GOODS_COUNT = #{goodsCount,jdbcType=INTEGER},
+      </if>
+      <if test="waveId != null" >
+        WAVE_ID = #{waveId,jdbcType=NVARCHAR},
+      </if>
+      <if test="consignee != null" >
+        CONSIGNEE = #{consignee,jdbcType=NVARCHAR},
+      </if>
+      <if test="conName != null" >
+        CON_NAME = #{conName,jdbcType=NVARCHAR},
+      </if>
+      <if test="conAddress != null" >
+        CON_ADDRESS = #{conAddress,jdbcType=NVARCHAR},
+      </if>
+      <if test="conDivision != null" >
+        CON_DIVISION = #{conDivision,jdbcType=NVARCHAR},
+      </if>
+      <if test="conTown != null" >
+        CON_TOWN = #{conTown,jdbcType=NVARCHAR},
+      </if>
+      <if test="conZone != null" >
+        CON_ZONE = #{conZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="conCity != null" >
+        CON_CITY = #{conCity,jdbcType=NVARCHAR},
+      </if>
+      <if test="conProvince != null" >
+        CON_PROVINCE = #{conProvince,jdbcType=NVARCHAR},
+      </if>
+      <if test="conCountry != null" >
+        CON_COUNTRY = #{conCountry,jdbcType=NVARCHAR},
+      </if>
+      <if test="conZip != null" >
+        CON_ZIP = #{conZip,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactName != null" >
+        CON_CONTACT_NAME = #{conContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactPhone != null" >
+        CON_CONTACT_PHONE = #{conContactPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactFax != null" >
+        CON_CONTACT_FAX = #{conContactFax,jdbcType=NVARCHAR},
+      </if>
+      <if test="conContactEmail != null" >
+        CON_CONTACT_EMAIL = #{conContactEmail,jdbcType=NVARCHAR},
+      </if>
+      <if test="conRemarks != null" >
+        CON_REMARKS = #{conRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="shipTo != null" >
+        SHIP_TO = #{shipTo,jdbcType=NVARCHAR},
+      </if>
+      <if test="stName != null" >
+        ST_NAME = #{stName,jdbcType=NVARCHAR},
+      </if>
+      <if test="stAddress != null" >
+        ST_ADDRESS = #{stAddress,jdbcType=NVARCHAR},
+      </if>
+      <if test="stDivision != null" >
+        ST_DIVISION = #{stDivision,jdbcType=NVARCHAR},
+      </if>
+      <if test="stTown != null" >
+        ST_TOWN = #{stTown,jdbcType=NVARCHAR},
+      </if>
+      <if test="stZone != null" >
+        ST_ZONE = #{stZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="stCity != null" >
+        ST_CITY = #{stCity,jdbcType=NVARCHAR},
+      </if>
+      <if test="stProvince != null" >
+        ST_PROVINCE = #{stProvince,jdbcType=NVARCHAR},
+      </if>
+      <if test="stCountry != null" >
+        ST_COUNTRY = #{stCountry,jdbcType=NVARCHAR},
+      </if>
+      <if test="stZip != null" >
+        ST_ZIP = #{stZip,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactName != null" >
+        ST_CONTACT_NAME = #{stContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactPhone != null" >
+        ST_CONTACT_PHONE = #{stContactPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactFax != null" >
+        ST_CONTACT_FAX = #{stContactFax,jdbcType=NVARCHAR},
+      </if>
+      <if test="stContactEmail != null" >
+        ST_CONTACT_EMAIL = #{stContactEmail,jdbcType=NVARCHAR},
+      </if>
+      <if test="stRemarks != null" >
+        ST_REMARKS = #{stRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="recId != null" >
+        REC_ID = #{recId,jdbcType=NVARCHAR},
+      </if>
+      <if test="recBatchNo != null" >
+        REC_BATCH_NO = #{recBatchNo,jdbcType=INTEGER},
+      </if>
+      <if test="isSentSc != null" >
+        IS_SENT_SC = #{isSentSc,jdbcType=CHAR},
+      </if>
+      <if test="ediUpId != null" >
+        EDI_UP_ID = #{ediUpId,jdbcType=NVARCHAR},
+      </if>
+      <if test="ediBackId != null" >
+        EDI_BACK_ID = #{ediBackId,jdbcType=NVARCHAR},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf01 != null" >
+        HUDF_01 = #{hudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf02 != null" >
+        HUDF_02 = #{hudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf03 != null" >
+        HUDF_03 = #{hudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf04 != null" >
+        HUDF_04 = #{hudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf05 != null" >
+        HUDF_05 = #{hudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf06 != null" >
+        HUDF_06 = #{hudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf07 != null" >
+        HUDF_07 = #{hudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf08 != null" >
+        HUDF_08 = #{hudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf09 != null" >
+        HUDF_09 = #{hudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf10 != null" >
+        HUDF_10 = #{hudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf11 != null" >
+        HUDF_11 = #{hudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf12 != null" >
+        HUDF_12 = #{hudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf13 != null" >
+        HUDF_13 = #{hudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf14 != null" >
+        HUDF_14 = #{hudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf15 != null" >
+        HUDF_15 = #{hudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf16 != null" >
+        HUDF_16 = #{hudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf17 != null" >
+        HUDF_17 = #{hudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf18 != null" >
+        HUDF_18 = #{hudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf19 != null" >
+        HUDF_19 = #{hudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf20 != null" >
+        HUDF_20 = #{hudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf21 != null" >
+        HUDF_21 = #{hudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf22 != null" >
+        HUDF_22 = #{hudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf23 != null" >
+        HUDF_23 = #{hudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf24 != null" >
+        HUDF_24 = #{hudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf25 != null" >
+        HUDF_25 = #{hudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf26 != null" >
+        HUDF_26 = #{hudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf27 != null" >
+        HUDF_27 = #{hudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf28 != null" >
+        HUDF_28 = #{hudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf29 != null" >
+        HUDF_29 = #{hudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="hudf30 != null" >
+        HUDF_30 = #{hudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopCode != null" >
+        SHOP_CODE = #{shopCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="shopNick != null" >
+        SHOP_NICK = #{shopNick,jdbcType=NVARCHAR},
+      </if>
+      <if test="memo != null" >
+        MEMO = #{memo,jdbcType=NVARCHAR},
+      </if>
+      <if test="carrierOrigin != null" >
+        CARRIER_ORIGIN = #{carrierOrigin,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisSku != null" >
+        ANALYSIS_SKU = #{analysisSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisZone != null" >
+        ANALYSIS_ZONE = #{analysisZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisAisle != null" >
+        ANALYSIS_AISLE = #{analysisAisle,jdbcType=NVARCHAR},
+      </if>
+      <if test="preAllocatedDate != null" >
+        PRE_ALLOCATED_DATE = #{preAllocatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customType != null" >
+        CUSTOM_TYPE = #{customType,jdbcType=NVARCHAR},
+      </if>
+      <if test="businessType != null" >
+        BUSINESS_TYPE = #{businessType,jdbcType=NVARCHAR},
+      </if>
+      <if test="isAudit != null" >
+        IS_AUDIT = #{isAudit,jdbcType=CHAR},
+      </if>
+      <if test="trackingNoEdi != null" >
+        TRACKING_NO_EDI = #{trackingNoEdi,jdbcType=NVARCHAR},
+      </if>
+      <if test="analysisLocation != null" >
+        ANALYSIS_LOCATION = #{analysisLocation,jdbcType=NVARCHAR},
+      </if>
+      <if test="isSendXb != null" >
+        IS_SEND_XB = #{isSendXb,jdbcType=CHAR},
+      </if>
+      <if test="sendStatus != null" >
+        SEND_STATUS = #{sendStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="serviceRemarks != null" >
+        SERVICE_REMARKS = #{serviceRemarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="mxtId != null" >
+        MXT_ID = #{mxtId,jdbcType=NVARCHAR},
+      </if>
+      <if test="preallocateStatus != null" >
+        PREALLOCATE_STATUS = #{preallocateStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="platPayDate != null" >
+        PLAT_PAY_DATE = #{platPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platAddDate != null" >
+        PLAT_ADD_DATE = #{platAddDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.bus.REL_HDR" >
+    update REL_HDR
+    set STATUS = #{status,jdbcType=NVARCHAR},
+      ORDER_TYPE = #{orderType,jdbcType=NVARCHAR},
+      ORDER_FLAG = #{orderFlag,jdbcType=NVARCHAR},
+      ORDER_SOURCE = #{orderSource,jdbcType=NVARCHAR},
+      WAREHOUSE = #{warehouse,jdbcType=NVARCHAR},
+      SOP_TYPE = #{sopType,jdbcType=NVARCHAR},
+      RELEASE_DATE = #{releaseDate,jdbcType=TIMESTAMP},
+      ALLOCATED_DATE = #{allocatedDate,jdbcType=TIMESTAMP},
+      PICKED_DATE = #{pickedDate,jdbcType=TIMESTAMP},
+      PACKED_DATE = #{packedDate,jdbcType=TIMESTAMP},
+      SHIPPED_DATE = #{shippedDate,jdbcType=TIMESTAMP},
+      DELIVERY_DATE = #{deliveryDate,jdbcType=TIMESTAMP},
+      IS_CHARGE = #{isCharge,jdbcType=CHAR},
+      PO_NO = #{poNo,jdbcType=NVARCHAR},
+      INV_NO = #{invNo,jdbcType=NVARCHAR},
+      SO_NO = #{soNo,jdbcType=NVARCHAR},
+      CARRIER = #{carrier,jdbcType=NVARCHAR},
+      TRACKING_NO = #{trackingNo,jdbcType=NVARCHAR},
+      CUSTODIAN = #{custodian,jdbcType=NVARCHAR},
+      BRAND = #{brand,jdbcType=NVARCHAR},
+      SKU_COUNT = #{skuCount,jdbcType=INTEGER},
+      GOODS_COUNT = #{goodsCount,jdbcType=INTEGER},
+      WAVE_ID = #{waveId,jdbcType=NVARCHAR},
+      CONSIGNEE = #{consignee,jdbcType=NVARCHAR},
+      CON_NAME = #{conName,jdbcType=NVARCHAR},
+      CON_ADDRESS = #{conAddress,jdbcType=NVARCHAR},
+      CON_DIVISION = #{conDivision,jdbcType=NVARCHAR},
+      CON_TOWN = #{conTown,jdbcType=NVARCHAR},
+      CON_ZONE = #{conZone,jdbcType=NVARCHAR},
+      CON_CITY = #{conCity,jdbcType=NVARCHAR},
+      CON_PROVINCE = #{conProvince,jdbcType=NVARCHAR},
+      CON_COUNTRY = #{conCountry,jdbcType=NVARCHAR},
+      CON_ZIP = #{conZip,jdbcType=NVARCHAR},
+      CON_CONTACT_NAME = #{conContactName,jdbcType=NVARCHAR},
+      CON_CONTACT_PHONE = #{conContactPhone,jdbcType=NVARCHAR},
+      CON_CONTACT_FAX = #{conContactFax,jdbcType=NVARCHAR},
+      CON_CONTACT_EMAIL = #{conContactEmail,jdbcType=NVARCHAR},
+      CON_REMARKS = #{conRemarks,jdbcType=NVARCHAR},
+      SHIP_TO = #{shipTo,jdbcType=NVARCHAR},
+      ST_NAME = #{stName,jdbcType=NVARCHAR},
+      ST_ADDRESS = #{stAddress,jdbcType=NVARCHAR},
+      ST_DIVISION = #{stDivision,jdbcType=NVARCHAR},
+      ST_TOWN = #{stTown,jdbcType=NVARCHAR},
+      ST_ZONE = #{stZone,jdbcType=NVARCHAR},
+      ST_CITY = #{stCity,jdbcType=NVARCHAR},
+      ST_PROVINCE = #{stProvince,jdbcType=NVARCHAR},
+      ST_COUNTRY = #{stCountry,jdbcType=NVARCHAR},
+      ST_ZIP = #{stZip,jdbcType=NVARCHAR},
+      ST_CONTACT_NAME = #{stContactName,jdbcType=NVARCHAR},
+      ST_CONTACT_PHONE = #{stContactPhone,jdbcType=NVARCHAR},
+      ST_CONTACT_FAX = #{stContactFax,jdbcType=NVARCHAR},
+      ST_CONTACT_EMAIL = #{stContactEmail,jdbcType=NVARCHAR},
+      ST_REMARKS = #{stRemarks,jdbcType=NVARCHAR},
+      REC_ID = #{recId,jdbcType=NVARCHAR},
+      REC_BATCH_NO = #{recBatchNo,jdbcType=INTEGER},
+      IS_SENT_SC = #{isSentSc,jdbcType=CHAR},
+      EDI_UP_ID = #{ediUpId,jdbcType=NVARCHAR},
+      EDI_BACK_ID = #{ediBackId,jdbcType=NVARCHAR},
+      FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      HUDF_01 = #{hudf01,jdbcType=NVARCHAR},
+      HUDF_02 = #{hudf02,jdbcType=NVARCHAR},
+      HUDF_03 = #{hudf03,jdbcType=NVARCHAR},
+      HUDF_04 = #{hudf04,jdbcType=NVARCHAR},
+      HUDF_05 = #{hudf05,jdbcType=NVARCHAR},
+      HUDF_06 = #{hudf06,jdbcType=NVARCHAR},
+      HUDF_07 = #{hudf07,jdbcType=NVARCHAR},
+      HUDF_08 = #{hudf08,jdbcType=NVARCHAR},
+      HUDF_09 = #{hudf09,jdbcType=NVARCHAR},
+      HUDF_10 = #{hudf10,jdbcType=NVARCHAR},
+      HUDF_11 = #{hudf11,jdbcType=NVARCHAR},
+      HUDF_12 = #{hudf12,jdbcType=NVARCHAR},
+      HUDF_13 = #{hudf13,jdbcType=NVARCHAR},
+      HUDF_14 = #{hudf14,jdbcType=NVARCHAR},
+      HUDF_15 = #{hudf15,jdbcType=NVARCHAR},
+      HUDF_16 = #{hudf16,jdbcType=NVARCHAR},
+      HUDF_17 = #{hudf17,jdbcType=NVARCHAR},
+      HUDF_18 = #{hudf18,jdbcType=NVARCHAR},
+      HUDF_19 = #{hudf19,jdbcType=NVARCHAR},
+      HUDF_20 = #{hudf20,jdbcType=NVARCHAR},
+      HUDF_21 = #{hudf21,jdbcType=NVARCHAR},
+      HUDF_22 = #{hudf22,jdbcType=NVARCHAR},
+      HUDF_23 = #{hudf23,jdbcType=NVARCHAR},
+      HUDF_24 = #{hudf24,jdbcType=NVARCHAR},
+      HUDF_25 = #{hudf25,jdbcType=NVARCHAR},
+      HUDF_26 = #{hudf26,jdbcType=NVARCHAR},
+      HUDF_27 = #{hudf27,jdbcType=NVARCHAR},
+      HUDF_28 = #{hudf28,jdbcType=NVARCHAR},
+      HUDF_29 = #{hudf29,jdbcType=NVARCHAR},
+      HUDF_30 = #{hudf30,jdbcType=NVARCHAR},
+      REMARKS = #{remarks,jdbcType=NVARCHAR},
+      VERSION = #{version,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      SHOP_CODE = #{shopCode,jdbcType=NVARCHAR},
+      SHOP_NICK = #{shopNick,jdbcType=NVARCHAR},
+      MEMO = #{memo,jdbcType=NVARCHAR},
+      CARRIER_ORIGIN = #{carrierOrigin,jdbcType=NVARCHAR},
+      ANALYSIS_SKU = #{analysisSku,jdbcType=NVARCHAR},
+      ANALYSIS_ZONE = #{analysisZone,jdbcType=NVARCHAR},
+      ANALYSIS_AISLE = #{analysisAisle,jdbcType=NVARCHAR},
+      PRE_ALLOCATED_DATE = #{preAllocatedDate,jdbcType=TIMESTAMP},
+      CUSTOM_TYPE = #{customType,jdbcType=NVARCHAR},
+      BUSINESS_TYPE = #{businessType,jdbcType=NVARCHAR},
+      IS_AUDIT = #{isAudit,jdbcType=CHAR},
+      TRACKING_NO_EDI = #{trackingNoEdi,jdbcType=NVARCHAR},
+      ANALYSIS_LOCATION = #{analysisLocation,jdbcType=NVARCHAR},
+      IS_SEND_XB = #{isSendXb,jdbcType=CHAR},
+      SEND_STATUS = #{sendStatus,jdbcType=NVARCHAR},
+      SERVICE_REMARKS = #{serviceRemarks,jdbcType=NVARCHAR},
+      MXT_ID = #{mxtId,jdbcType=NVARCHAR},
+      PREALLOCATE_STATUS = #{preallocateStatus,jdbcType=NVARCHAR},
+      PLAT_PAY_DATE = #{platPayDate,jdbcType=TIMESTAMP},
+      PLAT_ADD_DATE = #{platAddDate,jdbcType=TIMESTAMP}
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and REL_ID = #{relId,jdbcType=NVARCHAR}
+      and BATCH_NO = #{batchNo,jdbcType=INTEGER}
+  </update>
+</mapper>

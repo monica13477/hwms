@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.cfg.Sys_ConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.cfg.Sys_Config" >
+    <id column="CfgId" property="cfgid" jdbcType="VARCHAR" />
+    <result column="WORK_CENTER" property="workCenter" jdbcType="VARCHAR" />
+    <result column="CfgName" property="cfgname" jdbcType="VARCHAR" />
+    <result column="ConnectMode" property="connectmode" jdbcType="INTEGER" />
+    <result column="DbType" property="dbtype" jdbcType="VARCHAR" />
+    <result column="BusConnectString" property="busconnectstring" jdbcType="VARCHAR" />
+    <result column="ConfigConnectString" property="configconnectstring" jdbcType="VARCHAR" />
+    <result column="LogConnectString" property="logconnectstring" jdbcType="VARCHAR" />
+    <result column="WebConnectString" property="webconnectstring" jdbcType="VARCHAR" />
+    <result column="Url" property="url" jdbcType="VARCHAR" />
+    <result column="RemoteUrl" property="remoteurl" jdbcType="VARCHAR" />
+    <result column="Status" property="status" jdbcType="INTEGER" />
+    <result column="Memo" property="memo" jdbcType="VARCHAR" />
+    <result column="SYSTEM_VERSION" property="systemVersion" jdbcType="VARCHAR" />
+    <result column="NEW_Url" property="newUrl" jdbcType="VARCHAR" />
+    <result column="NEW_RemoteUrl" property="newRemoteurl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CfgId, WORK_CENTER, CfgName, ConnectMode, DbType, BusConnectString, ConfigConnectString, 
+    LogConnectString, WebConnectString, Url, RemoteUrl, Status, Memo, SYSTEM_VERSION, 
+    NEW_Url, NEW_RemoteUrl
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from Sys_Config
+    where CfgId = #{cfgid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from Sys_Config
+    where CfgId = #{cfgid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.cfg.Sys_Config" >
+    insert into Sys_Config (CfgId, WORK_CENTER, CfgName, 
+      ConnectMode, DbType, BusConnectString, 
+      ConfigConnectString, LogConnectString, 
+      WebConnectString, Url, RemoteUrl, 
+      Status, Memo, SYSTEM_VERSION, 
+      NEW_Url, NEW_RemoteUrl)
+    values (#{cfgid,jdbcType=VARCHAR}, #{workCenter,jdbcType=VARCHAR}, #{cfgname,jdbcType=VARCHAR}, 
+      #{connectmode,jdbcType=INTEGER}, #{dbtype,jdbcType=VARCHAR}, #{busconnectstring,jdbcType=VARCHAR}, 
+      #{configconnectstring,jdbcType=VARCHAR}, #{logconnectstring,jdbcType=VARCHAR}, 
+      #{webconnectstring,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{remoteurl,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{memo,jdbcType=VARCHAR}, #{systemVersion,jdbcType=VARCHAR}, 
+      #{newUrl,jdbcType=VARCHAR}, #{newRemoteurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.cfg.Sys_Config" >
+    insert into Sys_Config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cfgid != null" >
+        CfgId,
+      </if>
+      <if test="workCenter != null" >
+        WORK_CENTER,
+      </if>
+      <if test="cfgname != null" >
+        CfgName,
+      </if>
+      <if test="connectmode != null" >
+        ConnectMode,
+      </if>
+      <if test="dbtype != null" >
+        DbType,
+      </if>
+      <if test="busconnectstring != null" >
+        BusConnectString,
+      </if>
+      <if test="configconnectstring != null" >
+        ConfigConnectString,
+      </if>
+      <if test="logconnectstring != null" >
+        LogConnectString,
+      </if>
+      <if test="webconnectstring != null" >
+        WebConnectString,
+      </if>
+      <if test="url != null" >
+        Url,
+      </if>
+      <if test="remoteurl != null" >
+        RemoteUrl,
+      </if>
+      <if test="status != null" >
+        Status,
+      </if>
+      <if test="memo != null" >
+        Memo,
+      </if>
+      <if test="systemVersion != null" >
+        SYSTEM_VERSION,
+      </if>
+      <if test="newUrl != null" >
+        NEW_Url,
+      </if>
+      <if test="newRemoteurl != null" >
+        NEW_RemoteUrl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cfgid != null" >
+        #{cfgid,jdbcType=VARCHAR},
+      </if>
+      <if test="workCenter != null" >
+        #{workCenter,jdbcType=VARCHAR},
+      </if>
+      <if test="cfgname != null" >
+        #{cfgname,jdbcType=VARCHAR},
+      </if>
+      <if test="connectmode != null" >
+        #{connectmode,jdbcType=INTEGER},
+      </if>
+      <if test="dbtype != null" >
+        #{dbtype,jdbcType=VARCHAR},
+      </if>
+      <if test="busconnectstring != null" >
+        #{busconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="configconnectstring != null" >
+        #{configconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="logconnectstring != null" >
+        #{logconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="webconnectstring != null" >
+        #{webconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteurl != null" >
+        #{remoteurl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="systemVersion != null" >
+        #{systemVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="newUrl != null" >
+        #{newUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="newRemoteurl != null" >
+        #{newRemoteurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.cfg.Sys_Config" >
+    update Sys_Config
+    <set >
+      <if test="workCenter != null" >
+        WORK_CENTER = #{workCenter,jdbcType=VARCHAR},
+      </if>
+      <if test="cfgname != null" >
+        CfgName = #{cfgname,jdbcType=VARCHAR},
+      </if>
+      <if test="connectmode != null" >
+        ConnectMode = #{connectmode,jdbcType=INTEGER},
+      </if>
+      <if test="dbtype != null" >
+        DbType = #{dbtype,jdbcType=VARCHAR},
+      </if>
+      <if test="busconnectstring != null" >
+        BusConnectString = #{busconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="configconnectstring != null" >
+        ConfigConnectString = #{configconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="logconnectstring != null" >
+        LogConnectString = #{logconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="webconnectstring != null" >
+        WebConnectString = #{webconnectstring,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        Url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteurl != null" >
+        RemoteUrl = #{remoteurl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        Memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="systemVersion != null" >
+        SYSTEM_VERSION = #{systemVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="newUrl != null" >
+        NEW_Url = #{newUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="newRemoteurl != null" >
+        NEW_RemoteUrl = #{newRemoteurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CfgId = #{cfgid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.cfg.Sys_Config" >
+    update Sys_Config
+    set WORK_CENTER = #{workCenter,jdbcType=VARCHAR},
+      CfgName = #{cfgname,jdbcType=VARCHAR},
+      ConnectMode = #{connectmode,jdbcType=INTEGER},
+      DbType = #{dbtype,jdbcType=VARCHAR},
+      BusConnectString = #{busconnectstring,jdbcType=VARCHAR},
+      ConfigConnectString = #{configconnectstring,jdbcType=VARCHAR},
+      LogConnectString = #{logconnectstring,jdbcType=VARCHAR},
+      WebConnectString = #{webconnectstring,jdbcType=VARCHAR},
+      Url = #{url,jdbcType=VARCHAR},
+      RemoteUrl = #{remoteurl,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      Memo = #{memo,jdbcType=VARCHAR},
+      SYSTEM_VERSION = #{systemVersion,jdbcType=VARCHAR},
+      NEW_Url = #{newUrl,jdbcType=VARCHAR},
+      NEW_RemoteUrl = #{newRemoteurl,jdbcType=VARCHAR}
+    where CfgId = #{cfgid,jdbcType=VARCHAR}
+  </update>
+</mapper>

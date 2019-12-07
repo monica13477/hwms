@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.cfg.SYS_MenuMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.cfg.SYS_Menu" >
+    <id column="MID" property="mid" jdbcType="VARCHAR" />
+    <result column="PID" property="pid" jdbcType="VARCHAR" />
+    <result column="ModifyDate" property="modifydate" jdbcType="TIMESTAMP" />
+    <result column="MCode" property="mcode" jdbcType="VARCHAR" />
+    <result column="MName" property="mname" jdbcType="VARCHAR" />
+    <result column="IsLastLevel" property="islastlevel" jdbcType="INTEGER" />
+    <result column="OpenName" property="openname" jdbcType="VARCHAR" />
+    <result column="FileName" property="filename" jdbcType="VARCHAR" />
+    <result column="FileType" property="filetype" jdbcType="VARCHAR" />
+    <result column="ParamList" property="paramlist" jdbcType="VARCHAR" />
+    <result column="Layer" property="layer" jdbcType="INTEGER" />
+    <result column="MOrder" property="morder" jdbcType="INTEGER" />
+    <result column="ShortCut" property="shortcut" jdbcType="VARCHAR" />
+    <result column="SubSystem" property="subsystem" jdbcType="INTEGER" />
+    <result column="IsSystem" property="issystem" jdbcType="INTEGER" />
+    <result column="Memo" property="memo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MID, PID, ModifyDate, MCode, MName, IsLastLevel, OpenName, FileName, FileType, ParamList, 
+    Layer, MOrder, ShortCut, SubSystem, IsSystem, Memo
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_Menu
+    where MID = #{mid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SYS_Menu
+    where MID = #{mid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.cfg.SYS_Menu" >
+    insert into SYS_Menu (MID, PID, ModifyDate, 
+      MCode, MName, IsLastLevel, 
+      OpenName, FileName, FileType, 
+      ParamList, Layer, MOrder, 
+      ShortCut, SubSystem, IsSystem, 
+      Memo)
+    values (#{mid,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{modifydate,jdbcType=TIMESTAMP}, 
+      #{mcode,jdbcType=VARCHAR}, #{mname,jdbcType=VARCHAR}, #{islastlevel,jdbcType=INTEGER}, 
+      #{openname,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, #{filetype,jdbcType=VARCHAR}, 
+      #{paramlist,jdbcType=VARCHAR}, #{layer,jdbcType=INTEGER}, #{morder,jdbcType=INTEGER}, 
+      #{shortcut,jdbcType=VARCHAR}, #{subsystem,jdbcType=INTEGER}, #{issystem,jdbcType=INTEGER}, 
+      #{memo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.cfg.SYS_Menu" >
+    insert into SYS_Menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        MID,
+      </if>
+      <if test="pid != null" >
+        PID,
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate,
+      </if>
+      <if test="mcode != null" >
+        MCode,
+      </if>
+      <if test="mname != null" >
+        MName,
+      </if>
+      <if test="islastlevel != null" >
+        IsLastLevel,
+      </if>
+      <if test="openname != null" >
+        OpenName,
+      </if>
+      <if test="filename != null" >
+        FileName,
+      </if>
+      <if test="filetype != null" >
+        FileType,
+      </if>
+      <if test="paramlist != null" >
+        ParamList,
+      </if>
+      <if test="layer != null" >
+        Layer,
+      </if>
+      <if test="morder != null" >
+        MOrder,
+      </if>
+      <if test="shortcut != null" >
+        ShortCut,
+      </if>
+      <if test="subsystem != null" >
+        SubSystem,
+      </if>
+      <if test="issystem != null" >
+        IsSystem,
+      </if>
+      <if test="memo != null" >
+        Memo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        #{mid,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mcode != null" >
+        #{mcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mname != null" >
+        #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="islastlevel != null" >
+        #{islastlevel,jdbcType=INTEGER},
+      </if>
+      <if test="openname != null" >
+        #{openname,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null" >
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="paramlist != null" >
+        #{paramlist,jdbcType=VARCHAR},
+      </if>
+      <if test="layer != null" >
+        #{layer,jdbcType=INTEGER},
+      </if>
+      <if test="morder != null" >
+        #{morder,jdbcType=INTEGER},
+      </if>
+      <if test="shortcut != null" >
+        #{shortcut,jdbcType=VARCHAR},
+      </if>
+      <if test="subsystem != null" >
+        #{subsystem,jdbcType=INTEGER},
+      </if>
+      <if test="issystem != null" >
+        #{issystem,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.cfg.SYS_Menu" >
+    update SYS_Menu
+    <set >
+      <if test="pid != null" >
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mcode != null" >
+        MCode = #{mcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mname != null" >
+        MName = #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="islastlevel != null" >
+        IsLastLevel = #{islastlevel,jdbcType=INTEGER},
+      </if>
+      <if test="openname != null" >
+        OpenName = #{openname,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null" >
+        FileName = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null" >
+        FileType = #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="paramlist != null" >
+        ParamList = #{paramlist,jdbcType=VARCHAR},
+      </if>
+      <if test="layer != null" >
+        Layer = #{layer,jdbcType=INTEGER},
+      </if>
+      <if test="morder != null" >
+        MOrder = #{morder,jdbcType=INTEGER},
+      </if>
+      <if test="shortcut != null" >
+        ShortCut = #{shortcut,jdbcType=VARCHAR},
+      </if>
+      <if test="subsystem != null" >
+        SubSystem = #{subsystem,jdbcType=INTEGER},
+      </if>
+      <if test="issystem != null" >
+        IsSystem = #{issystem,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        Memo = #{memo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MID = #{mid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.cfg.SYS_Menu" >
+    update SYS_Menu
+    set PID = #{pid,jdbcType=VARCHAR},
+      ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      MCode = #{mcode,jdbcType=VARCHAR},
+      MName = #{mname,jdbcType=VARCHAR},
+      IsLastLevel = #{islastlevel,jdbcType=INTEGER},
+      OpenName = #{openname,jdbcType=VARCHAR},
+      FileName = #{filename,jdbcType=VARCHAR},
+      FileType = #{filetype,jdbcType=VARCHAR},
+      ParamList = #{paramlist,jdbcType=VARCHAR},
+      Layer = #{layer,jdbcType=INTEGER},
+      MOrder = #{morder,jdbcType=INTEGER},
+      ShortCut = #{shortcut,jdbcType=VARCHAR},
+      SubSystem = #{subsystem,jdbcType=INTEGER},
+      IsSystem = #{issystem,jdbcType=INTEGER},
+      Memo = #{memo,jdbcType=VARCHAR}
+    where MID = #{mid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectAuthorizedMenus" resultType="com.customs.hwms.entity.cfg.SYS_Menu" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from SYS_Menu
+    where ShortCut = #{type,jdbcType=VARCHAR}
+    order by PID ASC
+  </select>
+</mapper>

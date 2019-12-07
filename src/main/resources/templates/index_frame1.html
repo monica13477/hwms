@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" th:href="@{/common/css/sapar.css}" />
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <!--<link rel="stylesheet" th:href="@{/css/index_inner.css}" />-->
+
+    <title>系统</title>
+</head>
+
+<body  onload="init()">
+<div id="container">
+    <div id="bd">
+        <div class="wrap clearfix">
+            <div class="sidebar">
+                <h2 class="sidebar-header"><p>功能导航</p></h2>
+                <ul class="nav" th:each="menu : ${menuList}">
+                    <li>
+                        <div class="nav-header">
+                            <ul class="clearfixMenu" th:id="${menu.getMid()}">
+                                <span  th:mId="${menu.getMid()}"  th:mType="${menu.getShortcut()}"
+                                       onclick="postData(this.getAttribute('mId'),this.getAttribute('mType'))"
+                                       th:if="${menu.getPid()eq'/'}" th:text="${menu.mname}"  style="font-weight: bold;font-size: 15px"></span>
+                                <i class="icon"></i>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="content">
+                <div class="topbar clearfix">
+                    <ul class="user-msg clearfix">
+                        <li><span></span><a href="javascript:;">基础</a></li>
+                        <li><span></span><a href="javascript:;">管理</a></li>
+
+                        <li><a href="javascript:;">日志</a></li>
+
+
+                    </ul>
+                    <div class="contact clearfix">
+                        <!--<a class="wx" href="javascript:;">微信公众号</a>-->
+                        <!--<a class="qq" href="javascript:;">QQ客户</a>-->
+                    </div>
+                </div>
+                <div  id="menu_fragment" style="width: 100%;height: 100%;"  >
+                    <div id="line">
+                        <ul id="tabs">
+                                            <!-- Tabs go here -->
+                                            <li class='current'>
+                                                <a class='tab' id="index" href='#'>我的主页</a>
+                                            </li>
+
+                        </ul>
+                                    </div>
+                                <div id="tabcontent">
+                                    <!-- Tab content goes here -->
+                                    <div id="index_tabcontent" style="">
+                                        <iframe style='width:100%;height:630px;display:block;border:0' src=""></iframe>
+                                    </div>
+                                </div>
+                </div>
+                <!--<div> <p th:utext="${htmlcontent}">conten</p> </div>-->
+                <!--<iframe th:src="@{/login/goMenuIframe}" id="menu_iframe" width="100%" height="100%" frameborder="0"></iframe>-->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" th:src="@{/common/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/common/js/sapar.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    function postData(pid,mType) {
+        // alert("111");
+        $.ajax({
+            type: "post",
+            url: "/login/queryMenu",
+            data: JSON.stringify({pid : pid,mType : mType}),
+            dataType: "json",
+            contentType:'application/json',
+            success: function (data) {
+
+                var obj = JSON.parse(data.menu); //clearfixMenu
+
+                $(".clearfixMenu").children().filter('li').remove();
+                $(".clearfixMenu").children().filter('li').unbind("click");
+                for (var i=0;i<obj.length;i++)
+                {
+
+                    var mu=obj[i];
+                    var layer=obj[i].Layer;
+                  //  alert(pid);
+                   // $("#menlistUl").append("<li th:value="+mu.mname+"  id="+mu.filename+"><a href=\"javascript:;\"  class=\"clearfix\" ></a>"+mu.mname+"</li>");
+                    $("#"+pid).append("<li th:value="+mu.mname+"  id="+mu.filename+"><a href=\"javascript:;\"  class=\"clearfix\" ></a>"+mu.mname+"</li>");
+
+                }
+                $("#"+pid).children().filter('li').on('click',function(){
+                    var nextFile=$(this).attr('id');//绑定事件
+                    $("#menu_fragment").attr("th:replace",nextFile);
+                     var url = '/login/goMenuIframe';
+                    $("#menu_fragment").load(url);
+                });
+                // { $("#text-content").attr("th:insert","test/testThymeleaf :: loadData");
+                // $('#text-content').load("/testSelect"); });
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+
+
+    }
+
+    $("#menlistUl").on("click","li", function() {
+        $(this).addClass("selected").siblings().removeClass("selected");
+       // alert($(this).text());
+    });
+
+    function init(){
+        // 初始化内容
+        postData("MM3","Customs")}
+
+    //     //暂时不用
+    // $(document).ready(function(){
+    //     trace("初始化方法进入");
+    // });
+    // function trace(obj){
+    //     console.log(obj);
+    // }
+
+
+    /*]]>*/
+</script>
+</html>

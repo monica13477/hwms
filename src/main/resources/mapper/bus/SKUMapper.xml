@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.bus.SKUMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.bus.SKU" >
+    <id column="WORK_CENTER" property="workCenter" jdbcType="NVARCHAR" />
+    <id column="STORER_ID" property="storerId" jdbcType="NVARCHAR" />
+    <id column="SKU" property="sku" jdbcType="NVARCHAR" />
+    <result column="SKU_DESC" property="skuDesc" jdbcType="NVARCHAR" />
+    <result column="ENGLISH_NAME" property="englishName" jdbcType="VARCHAR" />
+    <result column="SKU_TYPE" property="skuType" jdbcType="NVARCHAR" />
+    <result column="CATEGORY" property="category" jdbcType="NVARCHAR" />
+    <result column="TARIFF_ID" property="tariffId" jdbcType="NVARCHAR" />
+    <result column="ALT_SKU" property="altSku" jdbcType="NVARCHAR" />
+    <result column="CUST_SKU" property="custSku" jdbcType="NVARCHAR" />
+    <result column="MANUF_SKU" property="manufSku" jdbcType="NVARCHAR" />
+    <result column="RETAIL_SKU" property="retailSku" jdbcType="NVARCHAR" />
+    <result column="SAFETY_STOCK" property="safetyStock" jdbcType="INTEGER" />
+    <result column="PUTAWAY_RULE" property="putawayRule" jdbcType="NVARCHAR" />
+    <result column="ALLOCATE_RULE_01" property="allocateRule01" jdbcType="NVARCHAR" />
+    <result column="ALLOCATE_RULE_02" property="allocateRule02" jdbcType="NVARCHAR" />
+    <result column="UNIT_PRICE" property="unitPrice" jdbcType="NUMERIC" />
+    <result column="COUNTRY_OF_ORIGIN" property="countryOfOrigin" jdbcType="NVARCHAR" />
+    <result column="DEFAULT_LOCATION" property="defaultLocation" jdbcType="NVARCHAR" />
+    <result column="APPROVAL_NO" property="approvalNo" jdbcType="NVARCHAR" />
+    <result column="HS_CODE" property="hsCode" jdbcType="NVARCHAR" />
+    <result column="IS_BOM" property="isBom" jdbcType="CHAR" />
+    <result column="IS_ACTIVE" property="isActive" jdbcType="CHAR" />
+    <result column="IS_FRAGILE" property="isFragile" jdbcType="CHAR" />
+    <result column="IS_HAZARDOUS" property="isHazardous" jdbcType="CHAR" />
+    <result column="IS_SN_MGT" property="isSnMgt" jdbcType="CHAR" />
+    <result column="SN_MODE" property="snMode" jdbcType="NVARCHAR" />
+    <result column="STYLE" property="style" jdbcType="NVARCHAR" />
+    <result column="COLOR" property="color" jdbcType="NVARCHAR" />
+    <result column="SIZE" property="size" jdbcType="NVARCHAR" />
+    <result column="SEASON_CODE" property="seasonCode" jdbcType="NVARCHAR" />
+    <result column="BRAND_CODE" property="brandCode" jdbcType="NVARCHAR" />
+    <result column="IS_LIFE_MGT" property="isLifeMgt" jdbcType="CHAR" />
+    <result column="LIFE_CYCLE" property="lifeCycle" jdbcType="INTEGER" />
+    <result column="REJECT_CYCLE" property="rejectCycle" jdbcType="INTEGER" />
+    <result column="WITHDRAW_CYCLE" property="withdrawCycle" jdbcType="INTEGER" />
+    <result column="ADVENT_CYCLE" property="adventCycle" jdbcType="INTEGER" />
+    <result column="SUDF_01" property="sudf01" jdbcType="NVARCHAR" />
+    <result column="SUDF_02" property="sudf02" jdbcType="NVARCHAR" />
+    <result column="SUDF_03" property="sudf03" jdbcType="NVARCHAR" />
+    <result column="SUDF_04" property="sudf04" jdbcType="NVARCHAR" />
+    <result column="SUDF_05" property="sudf05" jdbcType="NVARCHAR" />
+    <result column="SUDF_06" property="sudf06" jdbcType="NVARCHAR" />
+    <result column="SUDF_07" property="sudf07" jdbcType="NVARCHAR" />
+    <result column="SUDF_08" property="sudf08" jdbcType="NVARCHAR" />
+    <result column="SUDF_09" property="sudf09" jdbcType="NVARCHAR" />
+    <result column="SUDF_10" property="sudf10" jdbcType="NVARCHAR" />
+    <result column="SUDF_11" property="sudf11" jdbcType="NVARCHAR" />
+    <result column="SUDF_12" property="sudf12" jdbcType="NVARCHAR" />
+    <result column="SUDF_13" property="sudf13" jdbcType="NVARCHAR" />
+    <result column="SUDF_14" property="sudf14" jdbcType="NVARCHAR" />
+    <result column="SUDF_15" property="sudf15" jdbcType="NVARCHAR" />
+    <result column="SUDF_16" property="sudf16" jdbcType="NVARCHAR" />
+    <result column="SUDF_17" property="sudf17" jdbcType="NVARCHAR" />
+    <result column="SUDF_18" property="sudf18" jdbcType="NVARCHAR" />
+    <result column="SUDF_19" property="sudf19" jdbcType="NVARCHAR" />
+    <result column="SUDF_20" property="sudf20" jdbcType="NVARCHAR" />
+    <result column="SUDF_21" property="sudf21" jdbcType="NVARCHAR" />
+    <result column="SUDF_22" property="sudf22" jdbcType="NVARCHAR" />
+    <result column="SUDF_23" property="sudf23" jdbcType="NVARCHAR" />
+    <result column="SUDF_24" property="sudf24" jdbcType="NVARCHAR" />
+    <result column="SUDF_25" property="sudf25" jdbcType="NVARCHAR" />
+    <result column="SUDF_26" property="sudf26" jdbcType="NVARCHAR" />
+    <result column="SUDF_27" property="sudf27" jdbcType="NVARCHAR" />
+    <result column="SUDF_28" property="sudf28" jdbcType="NVARCHAR" />
+    <result column="SUDF_29" property="sudf29" jdbcType="NVARCHAR" />
+    <result column="SUDF_30" property="sudf30" jdbcType="NVARCHAR" />
+    <result column="PHOTO_PATH" property="photoPath" jdbcType="NVARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="NVARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="NVARCHAR" />
+    <result column="VERSION" property="version" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="NVARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_BY" property="modifyBy" jdbcType="NVARCHAR" />
+    <result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="SUPPLIER_CODE" property="supplierCode" jdbcType="NVARCHAR" />
+    <result column="SUPPLIER_NAME" property="supplierName" jdbcType="NVARCHAR" />
+    <result column="DEFAULT_ZONE" property="defaultZone" jdbcType="NVARCHAR" />
+    <result column="DEFAULT_AISLE" property="defaultAisle" jdbcType="NVARCHAR" />
+    <result column="MAX_QTY_L" property="maxQtyL" jdbcType="INTEGER" />
+    <result column="MAX_QTY_M" property="maxQtyM" jdbcType="INTEGER" />
+    <result column="MAX_QTY_S" property="maxQtyS" jdbcType="INTEGER" />
+    <result column="SKU_SHORT_DESC" property="skuShortDesc" jdbcType="NVARCHAR" />
+    <result column="ITEM_VERSION" property="itemVersion" jdbcType="NVARCHAR" />
+    <result column="IS_SEND_AGV" property="isSendAgv" jdbcType="CHAR" />
+    <result column="ITEM_HOT" property="itemHot" jdbcType="NVARCHAR" />
+    <result column="SUDF_31" property="sudf31" jdbcType="NVARCHAR" />
+    <result column="SUDF_32" property="sudf32" jdbcType="NVARCHAR" />
+    <result column="SUDF_33" property="sudf33" jdbcType="NVARCHAR" />
+    <result column="SUDF_34" property="sudf34" jdbcType="NVARCHAR" />
+    <result column="SUDF_35" property="sudf35" jdbcType="NVARCHAR" />
+    <result column="SUDF_36" property="sudf36" jdbcType="NVARCHAR" />
+    <result column="SUDF_37" property="sudf37" jdbcType="NVARCHAR" />
+    <result column="SUDF_38" property="sudf38" jdbcType="NVARCHAR" />
+    <result column="SUDF_39" property="sudf39" jdbcType="NVARCHAR" />
+    <result column="SUDF_40" property="sudf40" jdbcType="NVARCHAR" />
+    <result column="SUDF_41" property="sudf41" jdbcType="NVARCHAR" />
+    <result column="SUDF_42" property="sudf42" jdbcType="NVARCHAR" />
+    <result column="SUDF_43" property="sudf43" jdbcType="NVARCHAR" />
+    <result column="SUDF_44" property="sudf44" jdbcType="NVARCHAR" />
+    <result column="SUDF_45" property="sudf45" jdbcType="NVARCHAR" />
+    <result column="SUDF_46" property="sudf46" jdbcType="NVARCHAR" />
+    <result column="SUDF_47" property="sudf47" jdbcType="NVARCHAR" />
+    <result column="SUDF_48" property="sudf48" jdbcType="NVARCHAR" />
+    <result column="SUDF_49" property="sudf49" jdbcType="NVARCHAR" />
+    <result column="SUDF_50" property="sudf50" jdbcType="NVARCHAR" />
+    <result column="SHOP_LIST" property="shopList" jdbcType="NVARCHAR" />
+    <result column="ORDER_SOURCE_LIST" property="orderSourceList" jdbcType="NVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.customs.hwms.entity.bus.SKU" extends="BaseResultMap" >
+    <result column="TIMESTAMP" property="timestamp" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    WORK_CENTER, STORER_ID, SKU, SKU_DESC, ENGLISH_NAME, SKU_TYPE, CATEGORY, TARIFF_ID, 
+    ALT_SKU, CUST_SKU, MANUF_SKU, RETAIL_SKU, SAFETY_STOCK, PUTAWAY_RULE, ALLOCATE_RULE_01, 
+    ALLOCATE_RULE_02, UNIT_PRICE, COUNTRY_OF_ORIGIN, DEFAULT_LOCATION, APPROVAL_NO, HS_CODE, 
+    IS_BOM, IS_ACTIVE, IS_FRAGILE, IS_HAZARDOUS, IS_SN_MGT, SN_MODE, STYLE, COLOR, SIZE, 
+    SEASON_CODE, BRAND_CODE, IS_LIFE_MGT, LIFE_CYCLE, REJECT_CYCLE, WITHDRAW_CYCLE, ADVENT_CYCLE, 
+    SUDF_01, SUDF_02, SUDF_03, SUDF_04, SUDF_05, SUDF_06, SUDF_07, SUDF_08, SUDF_09, 
+    SUDF_10, SUDF_11, SUDF_12, SUDF_13, SUDF_14, SUDF_15, SUDF_16, SUDF_17, SUDF_18, 
+    SUDF_19, SUDF_20, SUDF_21, SUDF_22, SUDF_23, SUDF_24, SUDF_25, SUDF_26, SUDF_27, 
+    SUDF_28, SUDF_29, SUDF_30, PHOTO_PATH, FILE_NAME, REMARKS, VERSION, CREATE_BY, CREATE_DATE, 
+    MODIFY_BY, MODIFY_DATE, SUPPLIER_CODE, SUPPLIER_NAME, DEFAULT_ZONE, DEFAULT_AISLE, 
+    MAX_QTY_L, MAX_QTY_M, MAX_QTY_S, SKU_SHORT_DESC, ITEM_VERSION, IS_SEND_AGV, ITEM_HOT, 
+    SUDF_31, SUDF_32, SUDF_33, SUDF_34, SUDF_35, SUDF_36, SUDF_37, SUDF_38, SUDF_39, 
+    SUDF_40, SUDF_41, SUDF_42, SUDF_43, SUDF_44, SUDF_45, SUDF_46, SUDF_47, SUDF_48, 
+    SUDF_49, SUDF_50, SHOP_LIST, ORDER_SOURCE_LIST
+  </sql>
+  <sql id="Blob_Column_List" >
+    TIMESTAMP
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.customs.hwms.entity.bus.SKUKey" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from SKU
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and SKU = #{sku,jdbcType=NVARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.customs.hwms.entity.bus.SKUKey" >
+    delete from SKU
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and SKU = #{sku,jdbcType=NVARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.bus.SKU" >
+    insert into SKU (WORK_CENTER, STORER_ID, SKU, 
+      SKU_DESC, ENGLISH_NAME, SKU_TYPE, 
+      CATEGORY, TARIFF_ID, ALT_SKU, 
+      CUST_SKU, MANUF_SKU, RETAIL_SKU, 
+      SAFETY_STOCK, PUTAWAY_RULE, ALLOCATE_RULE_01, 
+      ALLOCATE_RULE_02, UNIT_PRICE, COUNTRY_OF_ORIGIN, 
+      DEFAULT_LOCATION, APPROVAL_NO, HS_CODE, 
+      IS_BOM, IS_ACTIVE, IS_FRAGILE, 
+      IS_HAZARDOUS, IS_SN_MGT, SN_MODE, 
+      STYLE, COLOR, SIZE, 
+      SEASON_CODE, BRAND_CODE, IS_LIFE_MGT, 
+      LIFE_CYCLE, REJECT_CYCLE, WITHDRAW_CYCLE, 
+      ADVENT_CYCLE, SUDF_01, SUDF_02, 
+      SUDF_03, SUDF_04, SUDF_05, 
+      SUDF_06, SUDF_07, SUDF_08, 
+      SUDF_09, SUDF_10, SUDF_11, 
+      SUDF_12, SUDF_13, SUDF_14, 
+      SUDF_15, SUDF_16, SUDF_17, 
+      SUDF_18, SUDF_19, SUDF_20, 
+      SUDF_21, SUDF_22, SUDF_23, 
+      SUDF_24, SUDF_25, SUDF_26, 
+      SUDF_27, SUDF_28, SUDF_29, 
+      SUDF_30, PHOTO_PATH, FILE_NAME, 
+      REMARKS, VERSION, CREATE_BY, 
+      CREATE_DATE, MODIFY_BY, MODIFY_DATE, 
+      SUPPLIER_CODE, SUPPLIER_NAME, DEFAULT_ZONE, 
+      DEFAULT_AISLE, MAX_QTY_L, MAX_QTY_M, 
+      MAX_QTY_S, SKU_SHORT_DESC, ITEM_VERSION, 
+      IS_SEND_AGV, ITEM_HOT, SUDF_31, 
+      SUDF_32, SUDF_33, SUDF_34, 
+      SUDF_35, SUDF_36, SUDF_37, 
+      SUDF_38, SUDF_39, SUDF_40, 
+      SUDF_41, SUDF_42, SUDF_43, 
+      SUDF_44, SUDF_45, SUDF_46, 
+      SUDF_47, SUDF_48, SUDF_49, 
+      SUDF_50, SHOP_LIST, ORDER_SOURCE_LIST, 
+      TIMESTAMP)
+    values (#{workCenter,jdbcType=NVARCHAR}, #{storerId,jdbcType=NVARCHAR}, #{sku,jdbcType=NVARCHAR}, 
+      #{skuDesc,jdbcType=NVARCHAR}, #{englishName,jdbcType=VARCHAR}, #{skuType,jdbcType=NVARCHAR}, 
+      #{category,jdbcType=NVARCHAR}, #{tariffId,jdbcType=NVARCHAR}, #{altSku,jdbcType=NVARCHAR}, 
+      #{custSku,jdbcType=NVARCHAR}, #{manufSku,jdbcType=NVARCHAR}, #{retailSku,jdbcType=NVARCHAR}, 
+      #{safetyStock,jdbcType=INTEGER}, #{putawayRule,jdbcType=NVARCHAR}, #{allocateRule01,jdbcType=NVARCHAR}, 
+      #{allocateRule02,jdbcType=NVARCHAR}, #{unitPrice,jdbcType=NUMERIC}, #{countryOfOrigin,jdbcType=NVARCHAR}, 
+      #{defaultLocation,jdbcType=NVARCHAR}, #{approvalNo,jdbcType=NVARCHAR}, #{hsCode,jdbcType=NVARCHAR}, 
+      #{isBom,jdbcType=CHAR}, #{isActive,jdbcType=CHAR}, #{isFragile,jdbcType=CHAR}, 
+      #{isHazardous,jdbcType=CHAR}, #{isSnMgt,jdbcType=CHAR}, #{snMode,jdbcType=NVARCHAR}, 
+      #{style,jdbcType=NVARCHAR}, #{color,jdbcType=NVARCHAR}, #{size,jdbcType=NVARCHAR}, 
+      #{seasonCode,jdbcType=NVARCHAR}, #{brandCode,jdbcType=NVARCHAR}, #{isLifeMgt,jdbcType=CHAR}, 
+      #{lifeCycle,jdbcType=INTEGER}, #{rejectCycle,jdbcType=INTEGER}, #{withdrawCycle,jdbcType=INTEGER}, 
+      #{adventCycle,jdbcType=INTEGER}, #{sudf01,jdbcType=NVARCHAR}, #{sudf02,jdbcType=NVARCHAR}, 
+      #{sudf03,jdbcType=NVARCHAR}, #{sudf04,jdbcType=NVARCHAR}, #{sudf05,jdbcType=NVARCHAR}, 
+      #{sudf06,jdbcType=NVARCHAR}, #{sudf07,jdbcType=NVARCHAR}, #{sudf08,jdbcType=NVARCHAR}, 
+      #{sudf09,jdbcType=NVARCHAR}, #{sudf10,jdbcType=NVARCHAR}, #{sudf11,jdbcType=NVARCHAR}, 
+      #{sudf12,jdbcType=NVARCHAR}, #{sudf13,jdbcType=NVARCHAR}, #{sudf14,jdbcType=NVARCHAR}, 
+      #{sudf15,jdbcType=NVARCHAR}, #{sudf16,jdbcType=NVARCHAR}, #{sudf17,jdbcType=NVARCHAR}, 
+      #{sudf18,jdbcType=NVARCHAR}, #{sudf19,jdbcType=NVARCHAR}, #{sudf20,jdbcType=NVARCHAR}, 
+      #{sudf21,jdbcType=NVARCHAR}, #{sudf22,jdbcType=NVARCHAR}, #{sudf23,jdbcType=NVARCHAR}, 
+      #{sudf24,jdbcType=NVARCHAR}, #{sudf25,jdbcType=NVARCHAR}, #{sudf26,jdbcType=NVARCHAR}, 
+      #{sudf27,jdbcType=NVARCHAR}, #{sudf28,jdbcType=NVARCHAR}, #{sudf29,jdbcType=NVARCHAR}, 
+      #{sudf30,jdbcType=NVARCHAR}, #{photoPath,jdbcType=NVARCHAR}, #{fileName,jdbcType=NVARCHAR}, 
+      #{remarks,jdbcType=NVARCHAR}, #{version,jdbcType=INTEGER}, #{createBy,jdbcType=NVARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=NVARCHAR}, #{modifyDate,jdbcType=TIMESTAMP}, 
+      #{supplierCode,jdbcType=NVARCHAR}, #{supplierName,jdbcType=NVARCHAR}, #{defaultZone,jdbcType=NVARCHAR}, 
+      #{defaultAisle,jdbcType=NVARCHAR}, #{maxQtyL,jdbcType=INTEGER}, #{maxQtyM,jdbcType=INTEGER}, 
+      #{maxQtyS,jdbcType=INTEGER}, #{skuShortDesc,jdbcType=NVARCHAR}, #{itemVersion,jdbcType=NVARCHAR}, 
+      #{isSendAgv,jdbcType=CHAR}, #{itemHot,jdbcType=NVARCHAR}, #{sudf31,jdbcType=NVARCHAR}, 
+      #{sudf32,jdbcType=NVARCHAR}, #{sudf33,jdbcType=NVARCHAR}, #{sudf34,jdbcType=NVARCHAR}, 
+      #{sudf35,jdbcType=NVARCHAR}, #{sudf36,jdbcType=NVARCHAR}, #{sudf37,jdbcType=NVARCHAR}, 
+      #{sudf38,jdbcType=NVARCHAR}, #{sudf39,jdbcType=NVARCHAR}, #{sudf40,jdbcType=NVARCHAR}, 
+      #{sudf41,jdbcType=NVARCHAR}, #{sudf42,jdbcType=NVARCHAR}, #{sudf43,jdbcType=NVARCHAR}, 
+      #{sudf44,jdbcType=NVARCHAR}, #{sudf45,jdbcType=NVARCHAR}, #{sudf46,jdbcType=NVARCHAR}, 
+      #{sudf47,jdbcType=NVARCHAR}, #{sudf48,jdbcType=NVARCHAR}, #{sudf49,jdbcType=NVARCHAR}, 
+      #{sudf50,jdbcType=NVARCHAR}, #{shopList,jdbcType=NVARCHAR}, #{orderSourceList,jdbcType=NVARCHAR}, 
+      #{timestamp,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.bus.SKU" >
+    insert into SKU
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        WORK_CENTER,
+      </if>
+      <if test="storerId != null" >
+        STORER_ID,
+      </if>
+      <if test="sku != null" >
+        SKU,
+      </if>
+      <if test="skuDesc != null" >
+        SKU_DESC,
+      </if>
+      <if test="englishName != null" >
+        ENGLISH_NAME,
+      </if>
+      <if test="skuType != null" >
+        SKU_TYPE,
+      </if>
+      <if test="category != null" >
+        CATEGORY,
+      </if>
+      <if test="tariffId != null" >
+        TARIFF_ID,
+      </if>
+      <if test="altSku != null" >
+        ALT_SKU,
+      </if>
+      <if test="custSku != null" >
+        CUST_SKU,
+      </if>
+      <if test="manufSku != null" >
+        MANUF_SKU,
+      </if>
+      <if test="retailSku != null" >
+        RETAIL_SKU,
+      </if>
+      <if test="safetyStock != null" >
+        SAFETY_STOCK,
+      </if>
+      <if test="putawayRule != null" >
+        PUTAWAY_RULE,
+      </if>
+      <if test="allocateRule01 != null" >
+        ALLOCATE_RULE_01,
+      </if>
+      <if test="allocateRule02 != null" >
+        ALLOCATE_RULE_02,
+      </if>
+      <if test="unitPrice != null" >
+        UNIT_PRICE,
+      </if>
+      <if test="countryOfOrigin != null" >
+        COUNTRY_OF_ORIGIN,
+      </if>
+      <if test="defaultLocation != null" >
+        DEFAULT_LOCATION,
+      </if>
+      <if test="approvalNo != null" >
+        APPROVAL_NO,
+      </if>
+      <if test="hsCode != null" >
+        HS_CODE,
+      </if>
+      <if test="isBom != null" >
+        IS_BOM,
+      </if>
+      <if test="isActive != null" >
+        IS_ACTIVE,
+      </if>
+      <if test="isFragile != null" >
+        IS_FRAGILE,
+      </if>
+      <if test="isHazardous != null" >
+        IS_HAZARDOUS,
+      </if>
+      <if test="isSnMgt != null" >
+        IS_SN_MGT,
+      </if>
+      <if test="snMode != null" >
+        SN_MODE,
+      </if>
+      <if test="style != null" >
+        STYLE,
+      </if>
+      <if test="color != null" >
+        COLOR,
+      </if>
+      <if test="size != null" >
+        SIZE,
+      </if>
+      <if test="seasonCode != null" >
+        SEASON_CODE,
+      </if>
+      <if test="brandCode != null" >
+        BRAND_CODE,
+      </if>
+      <if test="isLifeMgt != null" >
+        IS_LIFE_MGT,
+      </if>
+      <if test="lifeCycle != null" >
+        LIFE_CYCLE,
+      </if>
+      <if test="rejectCycle != null" >
+        REJECT_CYCLE,
+      </if>
+      <if test="withdrawCycle != null" >
+        WITHDRAW_CYCLE,
+      </if>
+      <if test="adventCycle != null" >
+        ADVENT_CYCLE,
+      </if>
+      <if test="sudf01 != null" >
+        SUDF_01,
+      </if>
+      <if test="sudf02 != null" >
+        SUDF_02,
+      </if>
+      <if test="sudf03 != null" >
+        SUDF_03,
+      </if>
+      <if test="sudf04 != null" >
+        SUDF_04,
+      </if>
+      <if test="sudf05 != null" >
+        SUDF_05,
+      </if>
+      <if test="sudf06 != null" >
+        SUDF_06,
+      </if>
+      <if test="sudf07 != null" >
+        SUDF_07,
+      </if>
+      <if test="sudf08 != null" >
+        SUDF_08,
+      </if>
+      <if test="sudf09 != null" >
+        SUDF_09,
+      </if>
+      <if test="sudf10 != null" >
+        SUDF_10,
+      </if>
+      <if test="sudf11 != null" >
+        SUDF_11,
+      </if>
+      <if test="sudf12 != null" >
+        SUDF_12,
+      </if>
+      <if test="sudf13 != null" >
+        SUDF_13,
+      </if>
+      <if test="sudf14 != null" >
+        SUDF_14,
+      </if>
+      <if test="sudf15 != null" >
+        SUDF_15,
+      </if>
+      <if test="sudf16 != null" >
+        SUDF_16,
+      </if>
+      <if test="sudf17 != null" >
+        SUDF_17,
+      </if>
+      <if test="sudf18 != null" >
+        SUDF_18,
+      </if>
+      <if test="sudf19 != null" >
+        SUDF_19,
+      </if>
+      <if test="sudf20 != null" >
+        SUDF_20,
+      </if>
+      <if test="sudf21 != null" >
+        SUDF_21,
+      </if>
+      <if test="sudf22 != null" >
+        SUDF_22,
+      </if>
+      <if test="sudf23 != null" >
+        SUDF_23,
+      </if>
+      <if test="sudf24 != null" >
+        SUDF_24,
+      </if>
+      <if test="sudf25 != null" >
+        SUDF_25,
+      </if>
+      <if test="sudf26 != null" >
+        SUDF_26,
+      </if>
+      <if test="sudf27 != null" >
+        SUDF_27,
+      </if>
+      <if test="sudf28 != null" >
+        SUDF_28,
+      </if>
+      <if test="sudf29 != null" >
+        SUDF_29,
+      </if>
+      <if test="sudf30 != null" >
+        SUDF_30,
+      </if>
+      <if test="photoPath != null" >
+        PHOTO_PATH,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY,
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE,
+      </if>
+      <if test="supplierCode != null" >
+        SUPPLIER_CODE,
+      </if>
+      <if test="supplierName != null" >
+        SUPPLIER_NAME,
+      </if>
+      <if test="defaultZone != null" >
+        DEFAULT_ZONE,
+      </if>
+      <if test="defaultAisle != null" >
+        DEFAULT_AISLE,
+      </if>
+      <if test="maxQtyL != null" >
+        MAX_QTY_L,
+      </if>
+      <if test="maxQtyM != null" >
+        MAX_QTY_M,
+      </if>
+      <if test="maxQtyS != null" >
+        MAX_QTY_S,
+      </if>
+      <if test="skuShortDesc != null" >
+        SKU_SHORT_DESC,
+      </if>
+      <if test="itemVersion != null" >
+        ITEM_VERSION,
+      </if>
+      <if test="isSendAgv != null" >
+        IS_SEND_AGV,
+      </if>
+      <if test="itemHot != null" >
+        ITEM_HOT,
+      </if>
+      <if test="sudf31 != null" >
+        SUDF_31,
+      </if>
+      <if test="sudf32 != null" >
+        SUDF_32,
+      </if>
+      <if test="sudf33 != null" >
+        SUDF_33,
+      </if>
+      <if test="sudf34 != null" >
+        SUDF_34,
+      </if>
+      <if test="sudf35 != null" >
+        SUDF_35,
+      </if>
+      <if test="sudf36 != null" >
+        SUDF_36,
+      </if>
+      <if test="sudf37 != null" >
+        SUDF_37,
+      </if>
+      <if test="sudf38 != null" >
+        SUDF_38,
+      </if>
+      <if test="sudf39 != null" >
+        SUDF_39,
+      </if>
+      <if test="sudf40 != null" >
+        SUDF_40,
+      </if>
+      <if test="sudf41 != null" >
+        SUDF_41,
+      </if>
+      <if test="sudf42 != null" >
+        SUDF_42,
+      </if>
+      <if test="sudf43 != null" >
+        SUDF_43,
+      </if>
+      <if test="sudf44 != null" >
+        SUDF_44,
+      </if>
+      <if test="sudf45 != null" >
+        SUDF_45,
+      </if>
+      <if test="sudf46 != null" >
+        SUDF_46,
+      </if>
+      <if test="sudf47 != null" >
+        SUDF_47,
+      </if>
+      <if test="sudf48 != null" >
+        SUDF_48,
+      </if>
+      <if test="sudf49 != null" >
+        SUDF_49,
+      </if>
+      <if test="sudf50 != null" >
+        SUDF_50,
+      </if>
+      <if test="shopList != null" >
+        SHOP_LIST,
+      </if>
+      <if test="orderSourceList != null" >
+        ORDER_SOURCE_LIST,
+      </if>
+      <if test="timestamp != null" >
+        TIMESTAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workCenter != null" >
+        #{workCenter,jdbcType=NVARCHAR},
+      </if>
+      <if test="storerId != null" >
+        #{storerId,jdbcType=NVARCHAR},
+      </if>
+      <if test="sku != null" >
+        #{sku,jdbcType=NVARCHAR},
+      </if>
+      <if test="skuDesc != null" >
+        #{skuDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="englishName != null" >
+        #{englishName,jdbcType=VARCHAR},
+      </if>
+      <if test="skuType != null" >
+        #{skuType,jdbcType=NVARCHAR},
+      </if>
+      <if test="category != null" >
+        #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="tariffId != null" >
+        #{tariffId,jdbcType=NVARCHAR},
+      </if>
+      <if test="altSku != null" >
+        #{altSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="custSku != null" >
+        #{custSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="manufSku != null" >
+        #{manufSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="retailSku != null" >
+        #{retailSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="safetyStock != null" >
+        #{safetyStock,jdbcType=INTEGER},
+      </if>
+      <if test="putawayRule != null" >
+        #{putawayRule,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule01 != null" >
+        #{allocateRule01,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule02 != null" >
+        #{allocateRule02,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="countryOfOrigin != null" >
+        #{countryOfOrigin,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultLocation != null" >
+        #{defaultLocation,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvalNo != null" >
+        #{approvalNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="hsCode != null" >
+        #{hsCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="isBom != null" >
+        #{isBom,jdbcType=CHAR},
+      </if>
+      <if test="isActive != null" >
+        #{isActive,jdbcType=CHAR},
+      </if>
+      <if test="isFragile != null" >
+        #{isFragile,jdbcType=CHAR},
+      </if>
+      <if test="isHazardous != null" >
+        #{isHazardous,jdbcType=CHAR},
+      </if>
+      <if test="isSnMgt != null" >
+        #{isSnMgt,jdbcType=CHAR},
+      </if>
+      <if test="snMode != null" >
+        #{snMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="style != null" >
+        #{style,jdbcType=NVARCHAR},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=NVARCHAR},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=NVARCHAR},
+      </if>
+      <if test="seasonCode != null" >
+        #{seasonCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="brandCode != null" >
+        #{brandCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="isLifeMgt != null" >
+        #{isLifeMgt,jdbcType=CHAR},
+      </if>
+      <if test="lifeCycle != null" >
+        #{lifeCycle,jdbcType=INTEGER},
+      </if>
+      <if test="rejectCycle != null" >
+        #{rejectCycle,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawCycle != null" >
+        #{withdrawCycle,jdbcType=INTEGER},
+      </if>
+      <if test="adventCycle != null" >
+        #{adventCycle,jdbcType=INTEGER},
+      </if>
+      <if test="sudf01 != null" >
+        #{sudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf02 != null" >
+        #{sudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf03 != null" >
+        #{sudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf04 != null" >
+        #{sudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf05 != null" >
+        #{sudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf06 != null" >
+        #{sudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf07 != null" >
+        #{sudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf08 != null" >
+        #{sudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf09 != null" >
+        #{sudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf10 != null" >
+        #{sudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf11 != null" >
+        #{sudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf12 != null" >
+        #{sudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf13 != null" >
+        #{sudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf14 != null" >
+        #{sudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf15 != null" >
+        #{sudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf16 != null" >
+        #{sudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf17 != null" >
+        #{sudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf18 != null" >
+        #{sudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf19 != null" >
+        #{sudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf20 != null" >
+        #{sudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf21 != null" >
+        #{sudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf22 != null" >
+        #{sudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf23 != null" >
+        #{sudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf24 != null" >
+        #{sudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf25 != null" >
+        #{sudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf26 != null" >
+        #{sudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf27 != null" >
+        #{sudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf28 != null" >
+        #{sudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf29 != null" >
+        #{sudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf30 != null" >
+        #{sudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="photoPath != null" >
+        #{photoPath,jdbcType=NVARCHAR},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierCode != null" >
+        #{supplierCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierName != null" >
+        #{supplierName,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultZone != null" >
+        #{defaultZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultAisle != null" >
+        #{defaultAisle,jdbcType=NVARCHAR},
+      </if>
+      <if test="maxQtyL != null" >
+        #{maxQtyL,jdbcType=INTEGER},
+      </if>
+      <if test="maxQtyM != null" >
+        #{maxQtyM,jdbcType=INTEGER},
+      </if>
+      <if test="maxQtyS != null" >
+        #{maxQtyS,jdbcType=INTEGER},
+      </if>
+      <if test="skuShortDesc != null" >
+        #{skuShortDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemVersion != null" >
+        #{itemVersion,jdbcType=NVARCHAR},
+      </if>
+      <if test="isSendAgv != null" >
+        #{isSendAgv,jdbcType=CHAR},
+      </if>
+      <if test="itemHot != null" >
+        #{itemHot,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf31 != null" >
+        #{sudf31,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf32 != null" >
+        #{sudf32,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf33 != null" >
+        #{sudf33,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf34 != null" >
+        #{sudf34,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf35 != null" >
+        #{sudf35,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf36 != null" >
+        #{sudf36,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf37 != null" >
+        #{sudf37,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf38 != null" >
+        #{sudf38,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf39 != null" >
+        #{sudf39,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf40 != null" >
+        #{sudf40,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf41 != null" >
+        #{sudf41,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf42 != null" >
+        #{sudf42,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf43 != null" >
+        #{sudf43,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf44 != null" >
+        #{sudf44,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf45 != null" >
+        #{sudf45,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf46 != null" >
+        #{sudf46,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf47 != null" >
+        #{sudf47,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf48 != null" >
+        #{sudf48,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf49 != null" >
+        #{sudf49,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf50 != null" >
+        #{sudf50,jdbcType=NVARCHAR},
+      </if>
+      <if test="shopList != null" >
+        #{shopList,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderSourceList != null" >
+        #{orderSourceList,jdbcType=NVARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        #{timestamp,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.bus.SKU" >
+    update SKU
+    <set >
+      <if test="skuDesc != null" >
+        SKU_DESC = #{skuDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="englishName != null" >
+        ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+      </if>
+      <if test="skuType != null" >
+        SKU_TYPE = #{skuType,jdbcType=NVARCHAR},
+      </if>
+      <if test="category != null" >
+        CATEGORY = #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="tariffId != null" >
+        TARIFF_ID = #{tariffId,jdbcType=NVARCHAR},
+      </if>
+      <if test="altSku != null" >
+        ALT_SKU = #{altSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="custSku != null" >
+        CUST_SKU = #{custSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="manufSku != null" >
+        MANUF_SKU = #{manufSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="retailSku != null" >
+        RETAIL_SKU = #{retailSku,jdbcType=NVARCHAR},
+      </if>
+      <if test="safetyStock != null" >
+        SAFETY_STOCK = #{safetyStock,jdbcType=INTEGER},
+      </if>
+      <if test="putawayRule != null" >
+        PUTAWAY_RULE = #{putawayRule,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule01 != null" >
+        ALLOCATE_RULE_01 = #{allocateRule01,jdbcType=NVARCHAR},
+      </if>
+      <if test="allocateRule02 != null" >
+        ALLOCATE_RULE_02 = #{allocateRule02,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitPrice != null" >
+        UNIT_PRICE = #{unitPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="countryOfOrigin != null" >
+        COUNTRY_OF_ORIGIN = #{countryOfOrigin,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultLocation != null" >
+        DEFAULT_LOCATION = #{defaultLocation,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvalNo != null" >
+        APPROVAL_NO = #{approvalNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="hsCode != null" >
+        HS_CODE = #{hsCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="isBom != null" >
+        IS_BOM = #{isBom,jdbcType=CHAR},
+      </if>
+      <if test="isActive != null" >
+        IS_ACTIVE = #{isActive,jdbcType=CHAR},
+      </if>
+      <if test="isFragile != null" >
+        IS_FRAGILE = #{isFragile,jdbcType=CHAR},
+      </if>
+      <if test="isHazardous != null" >
+        IS_HAZARDOUS = #{isHazardous,jdbcType=CHAR},
+      </if>
+      <if test="isSnMgt != null" >
+        IS_SN_MGT = #{isSnMgt,jdbcType=CHAR},
+      </if>
+      <if test="snMode != null" >
+        SN_MODE = #{snMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="style != null" >
+        STYLE = #{style,jdbcType=NVARCHAR},
+      </if>
+      <if test="color != null" >
+        COLOR = #{color,jdbcType=NVARCHAR},
+      </if>
+      <if test="size != null" >
+        SIZE = #{size,jdbcType=NVARCHAR},
+      </if>
+      <if test="seasonCode != null" >
+        SEASON_CODE = #{seasonCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="brandCode != null" >
+        BRAND_CODE = #{brandCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="isLifeMgt != null" >
+        IS_LIFE_MGT = #{isLifeMgt,jdbcType=CHAR},
+      </if>
+      <if test="lifeCycle != null" >
+        LIFE_CYCLE = #{lifeCycle,jdbcType=INTEGER},
+      </if>
+      <if test="rejectCycle != null" >
+        REJECT_CYCLE = #{rejectCycle,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawCycle != null" >
+        WITHDRAW_CYCLE = #{withdrawCycle,jdbcType=INTEGER},
+      </if>
+      <if test="adventCycle != null" >
+        ADVENT_CYCLE = #{adventCycle,jdbcType=INTEGER},
+      </if>
+      <if test="sudf01 != null" >
+        SUDF_01 = #{sudf01,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf02 != null" >
+        SUDF_02 = #{sudf02,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf03 != null" >
+        SUDF_03 = #{sudf03,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf04 != null" >
+        SUDF_04 = #{sudf04,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf05 != null" >
+        SUDF_05 = #{sudf05,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf06 != null" >
+        SUDF_06 = #{sudf06,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf07 != null" >
+        SUDF_07 = #{sudf07,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf08 != null" >
+        SUDF_08 = #{sudf08,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf09 != null" >
+        SUDF_09 = #{sudf09,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf10 != null" >
+        SUDF_10 = #{sudf10,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf11 != null" >
+        SUDF_11 = #{sudf11,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf12 != null" >
+        SUDF_12 = #{sudf12,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf13 != null" >
+        SUDF_13 = #{sudf13,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf14 != null" >
+        SUDF_14 = #{sudf14,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf15 != null" >
+        SUDF_15 = #{sudf15,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf16 != null" >
+        SUDF_16 = #{sudf16,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf17 != null" >
+        SUDF_17 = #{sudf17,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf18 != null" >
+        SUDF_18 = #{sudf18,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf19 != null" >
+        SUDF_19 = #{sudf19,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf20 != null" >
+        SUDF_20 = #{sudf20,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf21 != null" >
+        SUDF_21 = #{sudf21,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf22 != null" >
+        SUDF_22 = #{sudf22,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf23 != null" >
+        SUDF_23 = #{sudf23,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf24 != null" >
+        SUDF_24 = #{sudf24,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf25 != null" >
+        SUDF_25 = #{sudf25,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf26 != null" >
+        SUDF_26 = #{sudf26,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf27 != null" >
+        SUDF_27 = #{sudf27,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf28 != null" >
+        SUDF_28 = #{sudf28,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf29 != null" >
+        SUDF_29 = #{sudf29,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf30 != null" >
+        SUDF_30 = #{sudf30,jdbcType=NVARCHAR},
+      </if>
+      <if test="photoPath != null" >
+        PHOTO_PATH = #{photoPath,jdbcType=NVARCHAR},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=NVARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierCode != null" >
+        SUPPLIER_CODE = #{supplierCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierName != null" >
+        SUPPLIER_NAME = #{supplierName,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultZone != null" >
+        DEFAULT_ZONE = #{defaultZone,jdbcType=NVARCHAR},
+      </if>
+      <if test="defaultAisle != null" >
+        DEFAULT_AISLE = #{defaultAisle,jdbcType=NVARCHAR},
+      </if>
+      <if test="maxQtyL != null" >
+        MAX_QTY_L = #{maxQtyL,jdbcType=INTEGER},
+      </if>
+      <if test="maxQtyM != null" >
+        MAX_QTY_M = #{maxQtyM,jdbcType=INTEGER},
+      </if>
+      <if test="maxQtyS != null" >
+        MAX_QTY_S = #{maxQtyS,jdbcType=INTEGER},
+      </if>
+      <if test="skuShortDesc != null" >
+        SKU_SHORT_DESC = #{skuShortDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemVersion != null" >
+        ITEM_VERSION = #{itemVersion,jdbcType=NVARCHAR},
+      </if>
+      <if test="isSendAgv != null" >
+        IS_SEND_AGV = #{isSendAgv,jdbcType=CHAR},
+      </if>
+      <if test="itemHot != null" >
+        ITEM_HOT = #{itemHot,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf31 != null" >
+        SUDF_31 = #{sudf31,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf32 != null" >
+        SUDF_32 = #{sudf32,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf33 != null" >
+        SUDF_33 = #{sudf33,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf34 != null" >
+        SUDF_34 = #{sudf34,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf35 != null" >
+        SUDF_35 = #{sudf35,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf36 != null" >
+        SUDF_36 = #{sudf36,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf37 != null" >
+        SUDF_37 = #{sudf37,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf38 != null" >
+        SUDF_38 = #{sudf38,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf39 != null" >
+        SUDF_39 = #{sudf39,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf40 != null" >
+        SUDF_40 = #{sudf40,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf41 != null" >
+        SUDF_41 = #{sudf41,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf42 != null" >
+        SUDF_42 = #{sudf42,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf43 != null" >
+        SUDF_43 = #{sudf43,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf44 != null" >
+        SUDF_44 = #{sudf44,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf45 != null" >
+        SUDF_45 = #{sudf45,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf46 != null" >
+        SUDF_46 = #{sudf46,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf47 != null" >
+        SUDF_47 = #{sudf47,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf48 != null" >
+        SUDF_48 = #{sudf48,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf49 != null" >
+        SUDF_49 = #{sudf49,jdbcType=NVARCHAR},
+      </if>
+      <if test="sudf50 != null" >
+        SUDF_50 = #{sudf50,jdbcType=NVARCHAR},
+      </if>
+      <if test="shopList != null" >
+        SHOP_LIST = #{shopList,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderSourceList != null" >
+        ORDER_SOURCE_LIST = #{orderSourceList,jdbcType=NVARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        TIMESTAMP = #{timestamp,jdbcType=BINARY},
+      </if>
+    </set>
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and SKU = #{sku,jdbcType=NVARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.customs.hwms.entity.bus.SKU" >
+    update SKU
+    set SKU_DESC = #{skuDesc,jdbcType=NVARCHAR},
+      ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+      SKU_TYPE = #{skuType,jdbcType=NVARCHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      TARIFF_ID = #{tariffId,jdbcType=NVARCHAR},
+      ALT_SKU = #{altSku,jdbcType=NVARCHAR},
+      CUST_SKU = #{custSku,jdbcType=NVARCHAR},
+      MANUF_SKU = #{manufSku,jdbcType=NVARCHAR},
+      RETAIL_SKU = #{retailSku,jdbcType=NVARCHAR},
+      SAFETY_STOCK = #{safetyStock,jdbcType=INTEGER},
+      PUTAWAY_RULE = #{putawayRule,jdbcType=NVARCHAR},
+      ALLOCATE_RULE_01 = #{allocateRule01,jdbcType=NVARCHAR},
+      ALLOCATE_RULE_02 = #{allocateRule02,jdbcType=NVARCHAR},
+      UNIT_PRICE = #{unitPrice,jdbcType=NUMERIC},
+      COUNTRY_OF_ORIGIN = #{countryOfOrigin,jdbcType=NVARCHAR},
+      DEFAULT_LOCATION = #{defaultLocation,jdbcType=NVARCHAR},
+      APPROVAL_NO = #{approvalNo,jdbcType=NVARCHAR},
+      HS_CODE = #{hsCode,jdbcType=NVARCHAR},
+      IS_BOM = #{isBom,jdbcType=CHAR},
+      IS_ACTIVE = #{isActive,jdbcType=CHAR},
+      IS_FRAGILE = #{isFragile,jdbcType=CHAR},
+      IS_HAZARDOUS = #{isHazardous,jdbcType=CHAR},
+      IS_SN_MGT = #{isSnMgt,jdbcType=CHAR},
+      SN_MODE = #{snMode,jdbcType=NVARCHAR},
+      STYLE = #{style,jdbcType=NVARCHAR},
+      COLOR = #{color,jdbcType=NVARCHAR},
+      SIZE = #{size,jdbcType=NVARCHAR},
+      SEASON_CODE = #{seasonCode,jdbcType=NVARCHAR},
+      BRAND_CODE = #{brandCode,jdbcType=NVARCHAR},
+      IS_LIFE_MGT = #{isLifeMgt,jdbcType=CHAR},
+      LIFE_CYCLE = #{lifeCycle,jdbcType=INTEGER},
+      REJECT_CYCLE = #{rejectCycle,jdbcType=INTEGER},
+      WITHDRAW_CYCLE = #{withdrawCycle,jdbcType=INTEGER},
+      ADVENT_CYCLE = #{adventCycle,jdbcType=INTEGER},
+      SUDF_01 = #{sudf01,jdbcType=NVARCHAR},
+      SUDF_02 = #{sudf02,jdbcType=NVARCHAR},
+      SUDF_03 = #{sudf03,jdbcType=NVARCHAR},
+      SUDF_04 = #{sudf04,jdbcType=NVARCHAR},
+      SUDF_05 = #{sudf05,jdbcType=NVARCHAR},
+      SUDF_06 = #{sudf06,jdbcType=NVARCHAR},
+      SUDF_07 = #{sudf07,jdbcType=NVARCHAR},
+      SUDF_08 = #{sudf08,jdbcType=NVARCHAR},
+      SUDF_09 = #{sudf09,jdbcType=NVARCHAR},
+      SUDF_10 = #{sudf10,jdbcType=NVARCHAR},
+      SUDF_11 = #{sudf11,jdbcType=NVARCHAR},
+      SUDF_12 = #{sudf12,jdbcType=NVARCHAR},
+      SUDF_13 = #{sudf13,jdbcType=NVARCHAR},
+      SUDF_14 = #{sudf14,jdbcType=NVARCHAR},
+      SUDF_15 = #{sudf15,jdbcType=NVARCHAR},
+      SUDF_16 = #{sudf16,jdbcType=NVARCHAR},
+      SUDF_17 = #{sudf17,jdbcType=NVARCHAR},
+      SUDF_18 = #{sudf18,jdbcType=NVARCHAR},
+      SUDF_19 = #{sudf19,jdbcType=NVARCHAR},
+      SUDF_20 = #{sudf20,jdbcType=NVARCHAR},
+      SUDF_21 = #{sudf21,jdbcType=NVARCHAR},
+      SUDF_22 = #{sudf22,jdbcType=NVARCHAR},
+      SUDF_23 = #{sudf23,jdbcType=NVARCHAR},
+      SUDF_24 = #{sudf24,jdbcType=NVARCHAR},
+      SUDF_25 = #{sudf25,jdbcType=NVARCHAR},
+      SUDF_26 = #{sudf26,jdbcType=NVARCHAR},
+      SUDF_27 = #{sudf27,jdbcType=NVARCHAR},
+      SUDF_28 = #{sudf28,jdbcType=NVARCHAR},
+      SUDF_29 = #{sudf29,jdbcType=NVARCHAR},
+      SUDF_30 = #{sudf30,jdbcType=NVARCHAR},
+      PHOTO_PATH = #{photoPath,jdbcType=NVARCHAR},
+      FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      REMARKS = #{remarks,jdbcType=NVARCHAR},
+      VERSION = #{version,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      SUPPLIER_CODE = #{supplierCode,jdbcType=NVARCHAR},
+      SUPPLIER_NAME = #{supplierName,jdbcType=NVARCHAR},
+      DEFAULT_ZONE = #{defaultZone,jdbcType=NVARCHAR},
+      DEFAULT_AISLE = #{defaultAisle,jdbcType=NVARCHAR},
+      MAX_QTY_L = #{maxQtyL,jdbcType=INTEGER},
+      MAX_QTY_M = #{maxQtyM,jdbcType=INTEGER},
+      MAX_QTY_S = #{maxQtyS,jdbcType=INTEGER},
+      SKU_SHORT_DESC = #{skuShortDesc,jdbcType=NVARCHAR},
+      ITEM_VERSION = #{itemVersion,jdbcType=NVARCHAR},
+      IS_SEND_AGV = #{isSendAgv,jdbcType=CHAR},
+      ITEM_HOT = #{itemHot,jdbcType=NVARCHAR},
+      SUDF_31 = #{sudf31,jdbcType=NVARCHAR},
+      SUDF_32 = #{sudf32,jdbcType=NVARCHAR},
+      SUDF_33 = #{sudf33,jdbcType=NVARCHAR},
+      SUDF_34 = #{sudf34,jdbcType=NVARCHAR},
+      SUDF_35 = #{sudf35,jdbcType=NVARCHAR},
+      SUDF_36 = #{sudf36,jdbcType=NVARCHAR},
+      SUDF_37 = #{sudf37,jdbcType=NVARCHAR},
+      SUDF_38 = #{sudf38,jdbcType=NVARCHAR},
+      SUDF_39 = #{sudf39,jdbcType=NVARCHAR},
+      SUDF_40 = #{sudf40,jdbcType=NVARCHAR},
+      SUDF_41 = #{sudf41,jdbcType=NVARCHAR},
+      SUDF_42 = #{sudf42,jdbcType=NVARCHAR},
+      SUDF_43 = #{sudf43,jdbcType=NVARCHAR},
+      SUDF_44 = #{sudf44,jdbcType=NVARCHAR},
+      SUDF_45 = #{sudf45,jdbcType=NVARCHAR},
+      SUDF_46 = #{sudf46,jdbcType=NVARCHAR},
+      SUDF_47 = #{sudf47,jdbcType=NVARCHAR},
+      SUDF_48 = #{sudf48,jdbcType=NVARCHAR},
+      SUDF_49 = #{sudf49,jdbcType=NVARCHAR},
+      SUDF_50 = #{sudf50,jdbcType=NVARCHAR},
+      SHOP_LIST = #{shopList,jdbcType=NVARCHAR},
+      ORDER_SOURCE_LIST = #{orderSourceList,jdbcType=NVARCHAR},
+      TIMESTAMP = #{timestamp,jdbcType=BINARY}
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and SKU = #{sku,jdbcType=NVARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.bus.SKU" >
+    update SKU
+    set SKU_DESC = #{skuDesc,jdbcType=NVARCHAR},
+      ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+      SKU_TYPE = #{skuType,jdbcType=NVARCHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      TARIFF_ID = #{tariffId,jdbcType=NVARCHAR},
+      ALT_SKU = #{altSku,jdbcType=NVARCHAR},
+      CUST_SKU = #{custSku,jdbcType=NVARCHAR},
+      MANUF_SKU = #{manufSku,jdbcType=NVARCHAR},
+      RETAIL_SKU = #{retailSku,jdbcType=NVARCHAR},
+      SAFETY_STOCK = #{safetyStock,jdbcType=INTEGER},
+      PUTAWAY_RULE = #{putawayRule,jdbcType=NVARCHAR},
+      ALLOCATE_RULE_01 = #{allocateRule01,jdbcType=NVARCHAR},
+      ALLOCATE_RULE_02 = #{allocateRule02,jdbcType=NVARCHAR},
+      UNIT_PRICE = #{unitPrice,jdbcType=NUMERIC},
+      COUNTRY_OF_ORIGIN = #{countryOfOrigin,jdbcType=NVARCHAR},
+      DEFAULT_LOCATION = #{defaultLocation,jdbcType=NVARCHAR},
+      APPROVAL_NO = #{approvalNo,jdbcType=NVARCHAR},
+      HS_CODE = #{hsCode,jdbcType=NVARCHAR},
+      IS_BOM = #{isBom,jdbcType=CHAR},
+      IS_ACTIVE = #{isActive,jdbcType=CHAR},
+      IS_FRAGILE = #{isFragile,jdbcType=CHAR},
+      IS_HAZARDOUS = #{isHazardous,jdbcType=CHAR},
+      IS_SN_MGT = #{isSnMgt,jdbcType=CHAR},
+      SN_MODE = #{snMode,jdbcType=NVARCHAR},
+      STYLE = #{style,jdbcType=NVARCHAR},
+      COLOR = #{color,jdbcType=NVARCHAR},
+      SIZE = #{size,jdbcType=NVARCHAR},
+      SEASON_CODE = #{seasonCode,jdbcType=NVARCHAR},
+      BRAND_CODE = #{brandCode,jdbcType=NVARCHAR},
+      IS_LIFE_MGT = #{isLifeMgt,jdbcType=CHAR},
+      LIFE_CYCLE = #{lifeCycle,jdbcType=INTEGER},
+      REJECT_CYCLE = #{rejectCycle,jdbcType=INTEGER},
+      WITHDRAW_CYCLE = #{withdrawCycle,jdbcType=INTEGER},
+      ADVENT_CYCLE = #{adventCycle,jdbcType=INTEGER},
+      SUDF_01 = #{sudf01,jdbcType=NVARCHAR},
+      SUDF_02 = #{sudf02,jdbcType=NVARCHAR},
+      SUDF_03 = #{sudf03,jdbcType=NVARCHAR},
+      SUDF_04 = #{sudf04,jdbcType=NVARCHAR},
+      SUDF_05 = #{sudf05,jdbcType=NVARCHAR},
+      SUDF_06 = #{sudf06,jdbcType=NVARCHAR},
+      SUDF_07 = #{sudf07,jdbcType=NVARCHAR},
+      SUDF_08 = #{sudf08,jdbcType=NVARCHAR},
+      SUDF_09 = #{sudf09,jdbcType=NVARCHAR},
+      SUDF_10 = #{sudf10,jdbcType=NVARCHAR},
+      SUDF_11 = #{sudf11,jdbcType=NVARCHAR},
+      SUDF_12 = #{sudf12,jdbcType=NVARCHAR},
+      SUDF_13 = #{sudf13,jdbcType=NVARCHAR},
+      SUDF_14 = #{sudf14,jdbcType=NVARCHAR},
+      SUDF_15 = #{sudf15,jdbcType=NVARCHAR},
+      SUDF_16 = #{sudf16,jdbcType=NVARCHAR},
+      SUDF_17 = #{sudf17,jdbcType=NVARCHAR},
+      SUDF_18 = #{sudf18,jdbcType=NVARCHAR},
+      SUDF_19 = #{sudf19,jdbcType=NVARCHAR},
+      SUDF_20 = #{sudf20,jdbcType=NVARCHAR},
+      SUDF_21 = #{sudf21,jdbcType=NVARCHAR},
+      SUDF_22 = #{sudf22,jdbcType=NVARCHAR},
+      SUDF_23 = #{sudf23,jdbcType=NVARCHAR},
+      SUDF_24 = #{sudf24,jdbcType=NVARCHAR},
+      SUDF_25 = #{sudf25,jdbcType=NVARCHAR},
+      SUDF_26 = #{sudf26,jdbcType=NVARCHAR},
+      SUDF_27 = #{sudf27,jdbcType=NVARCHAR},
+      SUDF_28 = #{sudf28,jdbcType=NVARCHAR},
+      SUDF_29 = #{sudf29,jdbcType=NVARCHAR},
+      SUDF_30 = #{sudf30,jdbcType=NVARCHAR},
+      PHOTO_PATH = #{photoPath,jdbcType=NVARCHAR},
+      FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      REMARKS = #{remarks,jdbcType=NVARCHAR},
+      VERSION = #{version,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=NVARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      MODIFY_BY = #{modifyBy,jdbcType=NVARCHAR},
+      MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      SUPPLIER_CODE = #{supplierCode,jdbcType=NVARCHAR},
+      SUPPLIER_NAME = #{supplierName,jdbcType=NVARCHAR},
+      DEFAULT_ZONE = #{defaultZone,jdbcType=NVARCHAR},
+      DEFAULT_AISLE = #{defaultAisle,jdbcType=NVARCHAR},
+      MAX_QTY_L = #{maxQtyL,jdbcType=INTEGER},
+      MAX_QTY_M = #{maxQtyM,jdbcType=INTEGER},
+      MAX_QTY_S = #{maxQtyS,jdbcType=INTEGER},
+      SKU_SHORT_DESC = #{skuShortDesc,jdbcType=NVARCHAR},
+      ITEM_VERSION = #{itemVersion,jdbcType=NVARCHAR},
+      IS_SEND_AGV = #{isSendAgv,jdbcType=CHAR},
+      ITEM_HOT = #{itemHot,jdbcType=NVARCHAR},
+      SUDF_31 = #{sudf31,jdbcType=NVARCHAR},
+      SUDF_32 = #{sudf32,jdbcType=NVARCHAR},
+      SUDF_33 = #{sudf33,jdbcType=NVARCHAR},
+      SUDF_34 = #{sudf34,jdbcType=NVARCHAR},
+      SUDF_35 = #{sudf35,jdbcType=NVARCHAR},
+      SUDF_36 = #{sudf36,jdbcType=NVARCHAR},
+      SUDF_37 = #{sudf37,jdbcType=NVARCHAR},
+      SUDF_38 = #{sudf38,jdbcType=NVARCHAR},
+      SUDF_39 = #{sudf39,jdbcType=NVARCHAR},
+      SUDF_40 = #{sudf40,jdbcType=NVARCHAR},
+      SUDF_41 = #{sudf41,jdbcType=NVARCHAR},
+      SUDF_42 = #{sudf42,jdbcType=NVARCHAR},
+      SUDF_43 = #{sudf43,jdbcType=NVARCHAR},
+      SUDF_44 = #{sudf44,jdbcType=NVARCHAR},
+      SUDF_45 = #{sudf45,jdbcType=NVARCHAR},
+      SUDF_46 = #{sudf46,jdbcType=NVARCHAR},
+      SUDF_47 = #{sudf47,jdbcType=NVARCHAR},
+      SUDF_48 = #{sudf48,jdbcType=NVARCHAR},
+      SUDF_49 = #{sudf49,jdbcType=NVARCHAR},
+      SUDF_50 = #{sudf50,jdbcType=NVARCHAR},
+      SHOP_LIST = #{shopList,jdbcType=NVARCHAR},
+      ORDER_SOURCE_LIST = #{orderSourceList,jdbcType=NVARCHAR}
+    where WORK_CENTER = #{workCenter,jdbcType=NVARCHAR}
+      and STORER_ID = #{storerId,jdbcType=NVARCHAR}
+      and SKU = #{sku,jdbcType=NVARCHAR}
+  </update>
+</mapper>

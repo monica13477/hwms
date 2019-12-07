@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.cfg.SYS_UserMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.cfg.SYS_User" >
+    <id column="UserId" property="userid" jdbcType="VARCHAR" />
+    <result column="UserPwd" property="userpwd" jdbcType="VARCHAR" />
+    <result column="EmployeeId" property="employeeid" jdbcType="VARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="VARCHAR" />
+    <result column="DefaultCkId" property="defaultckid" jdbcType="VARCHAR" />
+    <result column="Status" property="status" jdbcType="INTEGER" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+    <result column="CreateDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="ModifyDate" property="modifydate" jdbcType="TIMESTAMP" />
+    <result column="ExpireDate" property="expiredate" jdbcType="TIMESTAMP" />
+    <result column="ForbidLoginDate" property="forbidlogindate" jdbcType="TIMESTAMP" />
+    <result column="ENForcePWDPolicy" property="enforcepwdpolicy" jdbcType="INTEGER" />
+    <result column="ENForceExpirePolicy" property="enforceexpirepolicy" jdbcType="INTEGER" />
+    <result column="PWDPolicyType" property="pwdpolicytype" jdbcType="VARCHAR" />
+    <result column="Ex1" property="ex1" jdbcType="VARCHAR" />
+    <result column="Ex2" property="ex2" jdbcType="VARCHAR" />
+    <result column="Ex3" property="ex3" jdbcType="INTEGER" />
+    <result column="Ex4" property="ex4" jdbcType="INTEGER" />
+    <result column="PDAPwd" property="pdapwd" jdbcType="VARCHAR" />
+    <result column="Sex" property="sex" jdbcType="VARCHAR" />
+    <result column="PersonName" property="personname" jdbcType="VARCHAR" />
+    <result column="ID_Number" property="idNumber" jdbcType="VARCHAR" />
+    <result column="Cell_Number" property="cellNumber" jdbcType="VARCHAR" />
+    <result column="User_Type" property="userType" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.customs.hwms.entity.cfg.SYS_User" extends="BaseResultMap" >
+    <result column="_timestamp" property="timestamp" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UserId, UserPwd, EmployeeId, CompanyId, DefaultCkId, Status, Remark, CreateDate, 
+    ModifyDate, ExpireDate, ForbidLoginDate, ENForcePWDPolicy, ENForceExpirePolicy, PWDPolicyType, 
+    Ex1, Ex2, Ex3, Ex4, PDAPwd, Sex, PersonName, ID_Number, Cell_Number, User_Type
+  </sql>
+  <sql id="Blob_Column_List" >
+    _timestamp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from SYS_User
+    where UserId = #{userid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SYS_User
+    where UserId = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.cfg.SYS_User" >
+    insert into SYS_User (UserId, UserPwd, EmployeeId, 
+      CompanyId, DefaultCkId, Status, 
+      Remark, CreateDate, ModifyDate, 
+      ExpireDate, ForbidLoginDate, ENForcePWDPolicy, 
+      ENForceExpirePolicy, PWDPolicyType, Ex1, 
+      Ex2, Ex3, Ex4, PDAPwd, 
+      Sex, PersonName, ID_Number, 
+      Cell_Number, User_Type, _timestamp
+      )
+    values (#{userid,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, #{employeeid,jdbcType=VARCHAR}, 
+      #{companyid,jdbcType=VARCHAR}, #{defaultckid,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, #{modifydate,jdbcType=TIMESTAMP}, 
+      #{expiredate,jdbcType=TIMESTAMP}, #{forbidlogindate,jdbcType=TIMESTAMP}, #{enforcepwdpolicy,jdbcType=INTEGER}, 
+      #{enforceexpirepolicy,jdbcType=INTEGER}, #{pwdpolicytype,jdbcType=VARCHAR}, #{ex1,jdbcType=VARCHAR}, 
+      #{ex2,jdbcType=VARCHAR}, #{ex3,jdbcType=INTEGER}, #{ex4,jdbcType=INTEGER}, #{pdapwd,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{personname,jdbcType=VARCHAR}, #{idNumber,jdbcType=VARCHAR}, 
+      #{cellNumber,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, #{timestamp,jdbcType=BINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.cfg.SYS_User" >
+    insert into SYS_User
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="userpwd != null" >
+        UserPwd,
+      </if>
+      <if test="employeeid != null" >
+        EmployeeId,
+      </if>
+      <if test="companyid != null" >
+        CompanyId,
+      </if>
+      <if test="defaultckid != null" >
+        DefaultCkId,
+      </if>
+      <if test="status != null" >
+        Status,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+      <if test="createdate != null" >
+        CreateDate,
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate,
+      </if>
+      <if test="expiredate != null" >
+        ExpireDate,
+      </if>
+      <if test="forbidlogindate != null" >
+        ForbidLoginDate,
+      </if>
+      <if test="enforcepwdpolicy != null" >
+        ENForcePWDPolicy,
+      </if>
+      <if test="enforceexpirepolicy != null" >
+        ENForceExpirePolicy,
+      </if>
+      <if test="pwdpolicytype != null" >
+        PWDPolicyType,
+      </if>
+      <if test="ex1 != null" >
+        Ex1,
+      </if>
+      <if test="ex2 != null" >
+        Ex2,
+      </if>
+      <if test="ex3 != null" >
+        Ex3,
+      </if>
+      <if test="ex4 != null" >
+        Ex4,
+      </if>
+      <if test="pdapwd != null" >
+        PDAPwd,
+      </if>
+      <if test="sex != null" >
+        Sex,
+      </if>
+      <if test="personname != null" >
+        PersonName,
+      </if>
+      <if test="idNumber != null" >
+        ID_Number,
+      </if>
+      <if test="cellNumber != null" >
+        Cell_Number,
+      </if>
+      <if test="userType != null" >
+        User_Type,
+      </if>
+      <if test="timestamp != null" >
+        _timestamp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultckid != null" >
+        #{defaultckid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifydate != null" >
+        #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expiredate != null" >
+        #{expiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="forbidlogindate != null" >
+        #{forbidlogindate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enforcepwdpolicy != null" >
+        #{enforcepwdpolicy,jdbcType=INTEGER},
+      </if>
+      <if test="enforceexpirepolicy != null" >
+        #{enforceexpirepolicy,jdbcType=INTEGER},
+      </if>
+      <if test="pwdpolicytype != null" >
+        #{pwdpolicytype,jdbcType=VARCHAR},
+      </if>
+      <if test="ex1 != null" >
+        #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="ex3 != null" >
+        #{ex3,jdbcType=INTEGER},
+      </if>
+      <if test="ex4 != null" >
+        #{ex4,jdbcType=INTEGER},
+      </if>
+      <if test="pdapwd != null" >
+        #{pdapwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="personname != null" >
+        #{personname,jdbcType=VARCHAR},
+      </if>
+      <if test="idNumber != null" >
+        #{idNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cellNumber != null" >
+        #{cellNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        #{timestamp,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.cfg.SYS_User" >
+    update SYS_User
+    <set >
+      <if test="userpwd != null" >
+        UserPwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeid != null" >
+        EmployeeId = #{employeeid,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null" >
+        CompanyId = #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultckid != null" >
+        DefaultCkId = #{defaultckid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expiredate != null" >
+        ExpireDate = #{expiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="forbidlogindate != null" >
+        ForbidLoginDate = #{forbidlogindate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enforcepwdpolicy != null" >
+        ENForcePWDPolicy = #{enforcepwdpolicy,jdbcType=INTEGER},
+      </if>
+      <if test="enforceexpirepolicy != null" >
+        ENForceExpirePolicy = #{enforceexpirepolicy,jdbcType=INTEGER},
+      </if>
+      <if test="pwdpolicytype != null" >
+        PWDPolicyType = #{pwdpolicytype,jdbcType=VARCHAR},
+      </if>
+      <if test="ex1 != null" >
+        Ex1 = #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        Ex2 = #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="ex3 != null" >
+        Ex3 = #{ex3,jdbcType=INTEGER},
+      </if>
+      <if test="ex4 != null" >
+        Ex4 = #{ex4,jdbcType=INTEGER},
+      </if>
+      <if test="pdapwd != null" >
+        PDAPwd = #{pdapwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        Sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="personname != null" >
+        PersonName = #{personname,jdbcType=VARCHAR},
+      </if>
+      <if test="idNumber != null" >
+        ID_Number = #{idNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cellNumber != null" >
+        Cell_Number = #{cellNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        User_Type = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        _timestamp = #{timestamp,jdbcType=BINARY},
+      </if>
+    </set>
+    where UserId = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.customs.hwms.entity.cfg.SYS_User" >
+    update SYS_User
+    set UserPwd = #{userpwd,jdbcType=VARCHAR},
+      EmployeeId = #{employeeid,jdbcType=VARCHAR},
+      CompanyId = #{companyid,jdbcType=VARCHAR},
+      DefaultCkId = #{defaultckid,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      Remark = #{remark,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      ExpireDate = #{expiredate,jdbcType=TIMESTAMP},
+      ForbidLoginDate = #{forbidlogindate,jdbcType=TIMESTAMP},
+      ENForcePWDPolicy = #{enforcepwdpolicy,jdbcType=INTEGER},
+      ENForceExpirePolicy = #{enforceexpirepolicy,jdbcType=INTEGER},
+      PWDPolicyType = #{pwdpolicytype,jdbcType=VARCHAR},
+      Ex1 = #{ex1,jdbcType=VARCHAR},
+      Ex2 = #{ex2,jdbcType=VARCHAR},
+      Ex3 = #{ex3,jdbcType=INTEGER},
+      Ex4 = #{ex4,jdbcType=INTEGER},
+      PDAPwd = #{pdapwd,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=VARCHAR},
+      PersonName = #{personname,jdbcType=VARCHAR},
+      ID_Number = #{idNumber,jdbcType=VARCHAR},
+      Cell_Number = #{cellNumber,jdbcType=VARCHAR},
+      User_Type = #{userType,jdbcType=VARCHAR},
+      _timestamp = #{timestamp,jdbcType=BINARY}
+    where UserId = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.cfg.SYS_User" >
+    update SYS_User
+    set UserPwd = #{userpwd,jdbcType=VARCHAR},
+      EmployeeId = #{employeeid,jdbcType=VARCHAR},
+      CompanyId = #{companyid,jdbcType=VARCHAR},
+      DefaultCkId = #{defaultckid,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      Remark = #{remark,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      ExpireDate = #{expiredate,jdbcType=TIMESTAMP},
+      ForbidLoginDate = #{forbidlogindate,jdbcType=TIMESTAMP},
+      ENForcePWDPolicy = #{enforcepwdpolicy,jdbcType=INTEGER},
+      ENForceExpirePolicy = #{enforceexpirepolicy,jdbcType=INTEGER},
+      PWDPolicyType = #{pwdpolicytype,jdbcType=VARCHAR},
+      Ex1 = #{ex1,jdbcType=VARCHAR},
+      Ex2 = #{ex2,jdbcType=VARCHAR},
+      Ex3 = #{ex3,jdbcType=INTEGER},
+      Ex4 = #{ex4,jdbcType=INTEGER},
+      PDAPwd = #{pdapwd,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=VARCHAR},
+      PersonName = #{personname,jdbcType=VARCHAR},
+      ID_Number = #{idNumber,jdbcType=VARCHAR},
+      Cell_Number = #{cellNumber,jdbcType=VARCHAR},
+      User_Type = #{userType,jdbcType=VARCHAR}
+    where UserId = #{userid,jdbcType=VARCHAR}
+  </update>
+</mapper>

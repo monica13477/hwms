@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.cfg.SYS_TimerTaskMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.cfg.SYS_TimerTask" >
+    <id column="TaskId" property="taskid" jdbcType="VARCHAR" />
+    <result column="TaskName" property="taskname" jdbcType="VARCHAR" />
+    <result column="DllFile" property="dllfile" jdbcType="VARCHAR" />
+    <result column="RunObj" property="runobj" jdbcType="VARCHAR" />
+    <result column="Param1" property="param1" jdbcType="VARCHAR" />
+    <result column="Param2" property="param2" jdbcType="VARCHAR" />
+    <result column="Status" property="status" jdbcType="INTEGER" />
+    <result column="FreqType" property="freqtype" jdbcType="INTEGER" />
+    <result column="FreqInterval" property="freqinterval" jdbcType="INTEGER" />
+    <result column="FreqValue" property="freqvalue" jdbcType="VARCHAR" />
+    <result column="FreqSubType" property="freqsubtype" jdbcType="INTEGER" />
+    <result column="FreqSubInterval" property="freqsubinterval" jdbcType="VARCHAR" />
+    <result column="SubStartTime" property="substarttime" jdbcType="TIMESTAMP" />
+    <result column="SubEndTime" property="subendtime" jdbcType="TIMESTAMP" />
+    <result column="StartDay" property="startday" jdbcType="TIMESTAMP" />
+    <result column="EndDay" property="endday" jdbcType="TIMESTAMP" />
+    <result column="IsInfinite" property="isinfinite" jdbcType="BIT" />
+    <result column="Creator" property="creator" jdbcType="VARCHAR" />
+    <result column="CreateDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="LastModify" property="lastmodify" jdbcType="VARCHAR" />
+    <result column="ModifyDate" property="modifydate" jdbcType="TIMESTAMP" />
+    <result column="Memo" property="memo" jdbcType="VARCHAR" />
+    <result column="Ex1" property="ex1" jdbcType="VARCHAR" />
+    <result column="Ex2" property="ex2" jdbcType="VARCHAR" />
+    <result column="OrigSystem" property="origsystem" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    TaskId, TaskName, DllFile, RunObj, Param1, Param2, Status, FreqType, FreqInterval, 
+    FreqValue, FreqSubType, FreqSubInterval, SubStartTime, SubEndTime, StartDay, EndDay, 
+    IsInfinite, Creator, CreateDate, LastModify, ModifyDate, Memo, Ex1, Ex2, OrigSystem
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_TimerTask
+    where TaskId = #{taskid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SYS_TimerTask
+    where TaskId = #{taskid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.cfg.SYS_TimerTask" >
+    insert into SYS_TimerTask (TaskId, TaskName, DllFile, 
+      RunObj, Param1, Param2, 
+      Status, FreqType, FreqInterval, 
+      FreqValue, FreqSubType, FreqSubInterval, 
+      SubStartTime, SubEndTime, StartDay, 
+      EndDay, IsInfinite, Creator, 
+      CreateDate, LastModify, ModifyDate, 
+      Memo, Ex1, Ex2, OrigSystem
+      )
+    values (#{taskid,jdbcType=VARCHAR}, #{taskname,jdbcType=VARCHAR}, #{dllfile,jdbcType=VARCHAR}, 
+      #{runobj,jdbcType=VARCHAR}, #{param1,jdbcType=VARCHAR}, #{param2,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{freqtype,jdbcType=INTEGER}, #{freqinterval,jdbcType=INTEGER}, 
+      #{freqvalue,jdbcType=VARCHAR}, #{freqsubtype,jdbcType=INTEGER}, #{freqsubinterval,jdbcType=VARCHAR}, 
+      #{substarttime,jdbcType=TIMESTAMP}, #{subendtime,jdbcType=TIMESTAMP}, #{startday,jdbcType=TIMESTAMP}, 
+      #{endday,jdbcType=TIMESTAMP}, #{isinfinite,jdbcType=BIT}, #{creator,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{lastmodify,jdbcType=VARCHAR}, #{modifydate,jdbcType=TIMESTAMP}, 
+      #{memo,jdbcType=VARCHAR}, #{ex1,jdbcType=VARCHAR}, #{ex2,jdbcType=VARCHAR}, #{origsystem,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.cfg.SYS_TimerTask" >
+    insert into SYS_TimerTask
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="taskid != null" >
+        TaskId,
+      </if>
+      <if test="taskname != null" >
+        TaskName,
+      </if>
+      <if test="dllfile != null" >
+        DllFile,
+      </if>
+      <if test="runobj != null" >
+        RunObj,
+      </if>
+      <if test="param1 != null" >
+        Param1,
+      </if>
+      <if test="param2 != null" >
+        Param2,
+      </if>
+      <if test="status != null" >
+        Status,
+      </if>
+      <if test="freqtype != null" >
+        FreqType,
+      </if>
+      <if test="freqinterval != null" >
+        FreqInterval,
+      </if>
+      <if test="freqvalue != null" >
+        FreqValue,
+      </if>
+      <if test="freqsubtype != null" >
+        FreqSubType,
+      </if>
+      <if test="freqsubinterval != null" >
+        FreqSubInterval,
+      </if>
+      <if test="substarttime != null" >
+        SubStartTime,
+      </if>
+      <if test="subendtime != null" >
+        SubEndTime,
+      </if>
+      <if test="startday != null" >
+        StartDay,
+      </if>
+      <if test="endday != null" >
+        EndDay,
+      </if>
+      <if test="isinfinite != null" >
+        IsInfinite,
+      </if>
+      <if test="creator != null" >
+        Creator,
+      </if>
+      <if test="createdate != null" >
+        CreateDate,
+      </if>
+      <if test="lastmodify != null" >
+        LastModify,
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate,
+      </if>
+      <if test="memo != null" >
+        Memo,
+      </if>
+      <if test="ex1 != null" >
+        Ex1,
+      </if>
+      <if test="ex2 != null" >
+        Ex2,
+      </if>
+      <if test="origsystem != null" >
+        OrigSystem,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="taskid != null" >
+        #{taskid,jdbcType=VARCHAR},
+      </if>
+      <if test="taskname != null" >
+        #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="dllfile != null" >
+        #{dllfile,jdbcType=VARCHAR},
+      </if>
+      <if test="runobj != null" >
+        #{runobj,jdbcType=VARCHAR},
+      </if>
+      <if test="param1 != null" >
+        #{param1,jdbcType=VARCHAR},
+      </if>
+      <if test="param2 != null" >
+        #{param2,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="freqtype != null" >
+        #{freqtype,jdbcType=INTEGER},
+      </if>
+      <if test="freqinterval != null" >
+        #{freqinterval,jdbcType=INTEGER},
+      </if>
+      <if test="freqvalue != null" >
+        #{freqvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="freqsubtype != null" >
+        #{freqsubtype,jdbcType=INTEGER},
+      </if>
+      <if test="freqsubinterval != null" >
+        #{freqsubinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="substarttime != null" >
+        #{substarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subendtime != null" >
+        #{subendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startday != null" >
+        #{startday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endday != null" >
+        #{endday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isinfinite != null" >
+        #{isinfinite,jdbcType=BIT},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodify != null" >
+        #{lastmodify,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="ex1 != null" >
+        #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="origsystem != null" >
+        #{origsystem,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.cfg.SYS_TimerTask" >
+    update SYS_TimerTask
+    <set >
+      <if test="taskname != null" >
+        TaskName = #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="dllfile != null" >
+        DllFile = #{dllfile,jdbcType=VARCHAR},
+      </if>
+      <if test="runobj != null" >
+        RunObj = #{runobj,jdbcType=VARCHAR},
+      </if>
+      <if test="param1 != null" >
+        Param1 = #{param1,jdbcType=VARCHAR},
+      </if>
+      <if test="param2 != null" >
+        Param2 = #{param2,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="freqtype != null" >
+        FreqType = #{freqtype,jdbcType=INTEGER},
+      </if>
+      <if test="freqinterval != null" >
+        FreqInterval = #{freqinterval,jdbcType=INTEGER},
+      </if>
+      <if test="freqvalue != null" >
+        FreqValue = #{freqvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="freqsubtype != null" >
+        FreqSubType = #{freqsubtype,jdbcType=INTEGER},
+      </if>
+      <if test="freqsubinterval != null" >
+        FreqSubInterval = #{freqsubinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="substarttime != null" >
+        SubStartTime = #{substarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subendtime != null" >
+        SubEndTime = #{subendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startday != null" >
+        StartDay = #{startday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endday != null" >
+        EndDay = #{endday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isinfinite != null" >
+        IsInfinite = #{isinfinite,jdbcType=BIT},
+      </if>
+      <if test="creator != null" >
+        Creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodify != null" >
+        LastModify = #{lastmodify,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memo != null" >
+        Memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="ex1 != null" >
+        Ex1 = #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        Ex2 = #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="origsystem != null" >
+        OrigSystem = #{origsystem,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TaskId = #{taskid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.cfg.SYS_TimerTask" >
+    update SYS_TimerTask
+    set TaskName = #{taskname,jdbcType=VARCHAR},
+      DllFile = #{dllfile,jdbcType=VARCHAR},
+      RunObj = #{runobj,jdbcType=VARCHAR},
+      Param1 = #{param1,jdbcType=VARCHAR},
+      Param2 = #{param2,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      FreqType = #{freqtype,jdbcType=INTEGER},
+      FreqInterval = #{freqinterval,jdbcType=INTEGER},
+      FreqValue = #{freqvalue,jdbcType=VARCHAR},
+      FreqSubType = #{freqsubtype,jdbcType=INTEGER},
+      FreqSubInterval = #{freqsubinterval,jdbcType=VARCHAR},
+      SubStartTime = #{substarttime,jdbcType=TIMESTAMP},
+      SubEndTime = #{subendtime,jdbcType=TIMESTAMP},
+      StartDay = #{startday,jdbcType=TIMESTAMP},
+      EndDay = #{endday,jdbcType=TIMESTAMP},
+      IsInfinite = #{isinfinite,jdbcType=BIT},
+      Creator = #{creator,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModify = #{lastmodify,jdbcType=VARCHAR},
+      ModifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      Memo = #{memo,jdbcType=VARCHAR},
+      Ex1 = #{ex1,jdbcType=VARCHAR},
+      Ex2 = #{ex2,jdbcType=VARCHAR},
+      OrigSystem = #{origsystem,jdbcType=VARCHAR}
+    where TaskId = #{taskid,jdbcType=VARCHAR}
+  </update>
+</mapper>

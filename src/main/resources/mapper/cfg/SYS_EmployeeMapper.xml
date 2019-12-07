@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.customs.hwms.dao.cfg.SYS_EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.customs.hwms.entity.cfg.SYS_Employee" >
+    <id column="EmployeeId" property="employeeid" jdbcType="VARCHAR" />
+    <result column="EmployeeName" property="employeename" jdbcType="VARCHAR" />
+    <result column="IsFired" property="isfired" jdbcType="TINYINT" />
+    <result column="IDCard" property="idcard" jdbcType="VARCHAR" />
+    <result column="Sex" property="sex" jdbcType="INTEGER" />
+    <result column="EnterDate" property="enterdate" jdbcType="TIMESTAMP" />
+    <result column="CompanyId" property="companyid" jdbcType="VARCHAR" />
+    <result column="BirthDate" property="birthdate" jdbcType="TIMESTAMP" />
+    <result column="Job" property="job" jdbcType="VARCHAR" />
+    <result column="Address" property="address" jdbcType="VARCHAR" />
+    <result column="Phone" property="phone" jdbcType="VARCHAR" />
+    <result column="Mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="ZipCode" property="zipcode" jdbcType="VARCHAR" />
+    <result column="EMail" property="email" jdbcType="VARCHAR" />
+    <result column="Memo" property="memo" jdbcType="VARCHAR" />
+    <result column="DepartmentId" property="departmentid" jdbcType="VARCHAR" />
+    <result column="LeaveDate" property="leavedate" jdbcType="TIMESTAMP" />
+    <result column="Ex1" property="ex1" jdbcType="VARCHAR" />
+    <result column="Ex2" property="ex2" jdbcType="VARCHAR" />
+    <result column="Ex3" property="ex3" jdbcType="INTEGER" />
+    <result column="Ex4" property="ex4" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.customs.hwms.entity.cfg.SYS_Employee" extends="BaseResultMap" >
+    <result column="_timestamp" property="timestamp" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    EmployeeId, EmployeeName, IsFired, IDCard, Sex, EnterDate, CompanyId, BirthDate, 
+    Job, Address, Phone, Mobile, ZipCode, EMail, Memo, DepartmentId, LeaveDate, Ex1, 
+    Ex2, Ex3, Ex4
+  </sql>
+  <sql id="Blob_Column_List" >
+    _timestamp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from SYS_Employee
+    where EmployeeId = #{employeeid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SYS_Employee
+    where EmployeeId = #{employeeid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.customs.hwms.entity.cfg.SYS_Employee" >
+    insert into SYS_Employee (EmployeeId, EmployeeName, IsFired, 
+      IDCard, Sex, EnterDate, 
+      CompanyId, BirthDate, Job, 
+      Address, Phone, Mobile, 
+      ZipCode, EMail, Memo, 
+      DepartmentId, LeaveDate, Ex1, 
+      Ex2, Ex3, Ex4, _timestamp
+      )
+    values (#{employeeid,jdbcType=VARCHAR}, #{employeename,jdbcType=VARCHAR}, #{isfired,jdbcType=TINYINT}, 
+      #{idcard,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{enterdate,jdbcType=TIMESTAMP}, 
+      #{companyid,jdbcType=VARCHAR}, #{birthdate,jdbcType=TIMESTAMP}, #{job,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{departmentid,jdbcType=VARCHAR}, #{leavedate,jdbcType=TIMESTAMP}, #{ex1,jdbcType=VARCHAR}, 
+      #{ex2,jdbcType=VARCHAR}, #{ex3,jdbcType=INTEGER}, #{ex4,jdbcType=INTEGER}, #{timestamp,jdbcType=BINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.customs.hwms.entity.cfg.SYS_Employee" >
+    insert into SYS_Employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        EmployeeId,
+      </if>
+      <if test="employeename != null" >
+        EmployeeName,
+      </if>
+      <if test="isfired != null" >
+        IsFired,
+      </if>
+      <if test="idcard != null" >
+        IDCard,
+      </if>
+      <if test="sex != null" >
+        Sex,
+      </if>
+      <if test="enterdate != null" >
+        EnterDate,
+      </if>
+      <if test="companyid != null" >
+        CompanyId,
+      </if>
+      <if test="birthdate != null" >
+        BirthDate,
+      </if>
+      <if test="job != null" >
+        Job,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="phone != null" >
+        Phone,
+      </if>
+      <if test="mobile != null" >
+        Mobile,
+      </if>
+      <if test="zipcode != null" >
+        ZipCode,
+      </if>
+      <if test="email != null" >
+        EMail,
+      </if>
+      <if test="memo != null" >
+        Memo,
+      </if>
+      <if test="departmentid != null" >
+        DepartmentId,
+      </if>
+      <if test="leavedate != null" >
+        LeaveDate,
+      </if>
+      <if test="ex1 != null" >
+        Ex1,
+      </if>
+      <if test="ex2 != null" >
+        Ex2,
+      </if>
+      <if test="ex3 != null" >
+        Ex3,
+      </if>
+      <if test="ex4 != null" >
+        Ex4,
+      </if>
+      <if test="timestamp != null" >
+        _timestamp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=VARCHAR},
+      </if>
+      <if test="employeename != null" >
+        #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="isfired != null" >
+        #{isfired,jdbcType=TINYINT},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enterdate != null" >
+        #{enterdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null" >
+        #{birthdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=VARCHAR},
+      </if>
+      <if test="leavedate != null" >
+        #{leavedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ex1 != null" >
+        #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="ex3 != null" >
+        #{ex3,jdbcType=INTEGER},
+      </if>
+      <if test="ex4 != null" >
+        #{ex4,jdbcType=INTEGER},
+      </if>
+      <if test="timestamp != null" >
+        #{timestamp,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.customs.hwms.entity.cfg.SYS_Employee" >
+    update SYS_Employee
+    <set >
+      <if test="employeename != null" >
+        EmployeeName = #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="isfired != null" >
+        IsFired = #{isfired,jdbcType=TINYINT},
+      </if>
+      <if test="idcard != null" >
+        IDCard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        Sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enterdate != null" >
+        EnterDate = #{enterdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyid != null" >
+        CompanyId = #{companyid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null" >
+        BirthDate = #{birthdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="job != null" >
+        Job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        Phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        Mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZipCode = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMail = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        Memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null" >
+        DepartmentId = #{departmentid,jdbcType=VARCHAR},
+      </if>
+      <if test="leavedate != null" >
+        LeaveDate = #{leavedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ex1 != null" >
+        Ex1 = #{ex1,jdbcType=VARCHAR},
+      </if>
+      <if test="ex2 != null" >
+        Ex2 = #{ex2,jdbcType=VARCHAR},
+      </if>
+      <if test="ex3 != null" >
+        Ex3 = #{ex3,jdbcType=INTEGER},
+      </if>
+      <if test="ex4 != null" >
+        Ex4 = #{ex4,jdbcType=INTEGER},
+      </if>
+      <if test="timestamp != null" >
+        _timestamp = #{timestamp,jdbcType=BINARY},
+      </if>
+    </set>
+    where EmployeeId = #{employeeid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.customs.hwms.entity.cfg.SYS_Employee" >
+    update SYS_Employee
+    set EmployeeName = #{employeename,jdbcType=VARCHAR},
+      IsFired = #{isfired,jdbcType=TINYINT},
+      IDCard = #{idcard,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=INTEGER},
+      EnterDate = #{enterdate,jdbcType=TIMESTAMP},
+      CompanyId = #{companyid,jdbcType=VARCHAR},
+      BirthDate = #{birthdate,jdbcType=TIMESTAMP},
+      Job = #{job,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      Phone = #{phone,jdbcType=VARCHAR},
+      Mobile = #{mobile,jdbcType=VARCHAR},
+      ZipCode = #{zipcode,jdbcType=VARCHAR},
+      EMail = #{email,jdbcType=VARCHAR},
+      Memo = #{memo,jdbcType=VARCHAR},
+      DepartmentId = #{departmentid,jdbcType=VARCHAR},
+      LeaveDate = #{leavedate,jdbcType=TIMESTAMP},
+      Ex1 = #{ex1,jdbcType=VARCHAR},
+      Ex2 = #{ex2,jdbcType=VARCHAR},
+      Ex3 = #{ex3,jdbcType=INTEGER},
+      Ex4 = #{ex4,jdbcType=INTEGER},
+      _timestamp = #{timestamp,jdbcType=BINARY}
+    where EmployeeId = #{employeeid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.customs.hwms.entity.cfg.SYS_Employee" >
+    update SYS_Employee
+    set EmployeeName = #{employeename,jdbcType=VARCHAR},
+      IsFired = #{isfired,jdbcType=TINYINT},
+      IDCard = #{idcard,jdbcType=VARCHAR},
+      Sex = #{sex,jdbcType=INTEGER},
+      EnterDate = #{enterdate,jdbcType=TIMESTAMP},
+      CompanyId = #{companyid,jdbcType=VARCHAR},
+      BirthDate = #{birthdate,jdbcType=TIMESTAMP},
+      Job = #{job,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      Phone = #{phone,jdbcType=VARCHAR},
+      Mobile = #{mobile,jdbcType=VARCHAR},
+      ZipCode = #{zipcode,jdbcType=VARCHAR},
+      EMail = #{email,jdbcType=VARCHAR},
+      Memo = #{memo,jdbcType=VARCHAR},
+      DepartmentId = #{departmentid,jdbcType=VARCHAR},
+      LeaveDate = #{leavedate,jdbcType=TIMESTAMP},
+      Ex1 = #{ex1,jdbcType=VARCHAR},
+      Ex2 = #{ex2,jdbcType=VARCHAR},
+      Ex3 = #{ex3,jdbcType=INTEGER},
+      Ex4 = #{ex4,jdbcType=INTEGER}
+    where EmployeeId = #{employeeid,jdbcType=VARCHAR}
+  </update>
+</mapper>
