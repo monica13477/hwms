@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-14T09:05:16.163Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="U6iljMM_tjknuELGUJWC" version="14.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-14T09:06:08.536Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="1DDMwgF5B0pXUPJkEfmW" version="14.2.2" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="2272" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -300,6 +300,15 @@
         </mxCell>
         <mxCell id="yzYiFR4z75ykNO1_PpVc-232" value="工作台就位小车" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="200" y="800" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-233" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="yzYiFR4z75ykNO1_PpVc-193">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="770" as="sourcePoint" />
+            <mxPoint x="310" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-236" value="工作台启动任务" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="750" width="100" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
