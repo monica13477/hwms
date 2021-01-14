@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-14T08:35:23.726Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="otCCd2EgmlYdBYMOYsc2" version="14.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-14T08:38:36.709Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="Q4z_6M8v0zj5EuF4xrYC" version="14.2.2" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="2272" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -88,7 +88,7 @@
           <mxGeometry x="410" y="280" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yzYiFR4z75ykNO1_PpVc-6" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="645" y="360" width="10" height="300" as="geometry" />
+          <mxGeometry x="645" y="360" width="10" height="420" as="geometry" />
         </mxCell>
         <mxCell id="yzYiFR4z75ykNO1_PpVc-163" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -178,7 +178,7 @@
         <mxCell id="yzYiFR4z75ykNO1_PpVc-197" value="查询工作台当前任务" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="190" y="530" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="yzYiFR4z75ykNO1_PpVc-198" value="" style="endArrow=classic;html=1;entryX=-0.3;entryY=0.81;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.2;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1" source="yzYiFR4z75ykNO1_PpVc-194" target="yzYiFR4z75ykNO1_PpVc-6">
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-198" value="" style="endArrow=classic;html=1;entryX=-0.4;entryY=0.579;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.2;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1" source="yzYiFR4z75ykNO1_PpVc-194" target="yzYiFR4z75ykNO1_PpVc-6">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-310" y="650" as="sourcePoint" />
             <mxPoint x="-260" y="600" as="targetPoint" />
@@ -186,6 +186,18 @@
         </mxCell>
         <mxCell id="yzYiFR4z75ykNO1_PpVc-199" value="返回任务ID" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="200" y="580" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-200" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="630" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-201" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.188;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="yzYiFR4z75ykNO1_PpVc-200">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="500" as="sourcePoint" />
+            <mxPoint x="640" y="645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yzYiFR4z75ykNO1_PpVc-202" value="选择/扫描任务号" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="620" width="100" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
