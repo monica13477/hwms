@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-14T09:17:25.371Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="ghgZ-5SePxEngyVbcah5" version="14.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-14T09:21:38.687Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="vCfcWiJ4Jcv2nlZA7L3R" version="14.2.2" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="2272" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -316,8 +316,30 @@
         <mxCell id="c_to7V4Jd-4JO9uJv_WA-2" value="容器" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="-500" y="80" width="100" height="430" as="geometry" />
         </mxCell>
-        <mxCell id="c_to7V4Jd-4JO9uJv_WA-3" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="c_to7V4Jd-4JO9uJv_WA-2">
-          <mxGeometry x="45" y="360" width="10" height="70" as="geometry" />
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-3" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="-455" y="870" width="10" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-5" value="" style="endArrow=classic;html=1;entryX=0.9;entryY=0.271;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="c_to7V4Jd-4JO9uJv_WA-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="889" as="sourcePoint" />
+            <mxPoint x="640" y="880" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-6" value="扫描条码" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="870" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-7" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="515" y="920" width="10" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-8" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="c_to7V4Jd-4JO9uJv_WA-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-440" y="930" as="sourcePoint" />
+            <mxPoint x="510" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_to7V4Jd-4JO9uJv_WA-10" value="定位任务组" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="910" width="80" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
